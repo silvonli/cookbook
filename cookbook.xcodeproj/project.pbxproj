@@ -38,6 +38,9 @@
 		B51617B116AE825B00099ED3 /* 分类_背景.png in Resources */ = {isa = PBXBuildFile; fileRef = B51617B016AE825B00099ED3 /* 分类_背景.png */; };
 		B5BD07C416AF190B009C23F2 /* 分类_123美食网.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C216AF190B009C23F2 /* 分类_123美食网.png */; };
 		B5BD07C516AF190B009C23F2 /* 分类_家常菜谱.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C316AF190B009C23F2 /* 分类_家常菜谱.png */; };
+		B5BD07CA16AF254A009C23F2 /* 分类_表.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C716AF254A009C23F2 /* 分类_表.png */; };
+		B5BD07CB16AF254A009C23F2 /* 分类_更多.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C816AF254A009C23F2 /* 分类_更多.png */; };
+		B5BD07CC16AF254A009C23F2 /* 分类_咖啡.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C916AF254A009C23F2 /* 分类_咖啡.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		B51617B016AE825B00099ED3 /* 分类_背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_背景.png"; sourceTree = "<group>"; };
 		B5BD07C216AF190B009C23F2 /* 分类_123美食网.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_123美食网.png"; sourceTree = "<group>"; };
 		B5BD07C316AF190B009C23F2 /* 分类_家常菜谱.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_家常菜谱.png"; sourceTree = "<group>"; };
+		B5BD07C716AF254A009C23F2 /* 分类_表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_表.png"; sourceTree = "<group>"; };
+		B5BD07C816AF254A009C23F2 /* 分类_更多.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_更多.png"; sourceTree = "<group>"; };
+		B5BD07C916AF254A009C23F2 /* 分类_咖啡.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_咖啡.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,9 @@
 		B51617A016AE704300099ED3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B5BD07C716AF254A009C23F2 /* 分类_表.png */,
+				B5BD07C816AF254A009C23F2 /* 分类_更多.png */,
+				B5BD07C916AF254A009C23F2 /* 分类_咖啡.png */,
 				B5BD07C216AF190B009C23F2 /* 分类_123美食网.png */,
 				B5BD07C316AF190B009C23F2 /* 分类_家常菜谱.png */,
 				B50C115916AE8E1600F48291 /* 分类_笔触.png */,
@@ -269,6 +278,9 @@
 				B50C116816AE8E1600F48291 /* 分类_猪肉.png in Resources */,
 				B5BD07C416AF190B009C23F2 /* 分类_123美食网.png in Resources */,
 				B5BD07C516AF190B009C23F2 /* 分类_家常菜谱.png in Resources */,
+				B5BD07CA16AF254A009C23F2 /* 分类_表.png in Resources */,
+				B5BD07CB16AF254A009C23F2 /* 分类_更多.png in Resources */,
+				B5BD07CC16AF254A009C23F2 /* 分类_咖啡.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

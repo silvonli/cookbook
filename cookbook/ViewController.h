@@ -11,7 +11,6 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet GMGridView *recipeItemView;
-@property (weak, nonatomic) IBOutlet UIImageView *categoryView;
 
 @property (weak, nonatomic) UIButton *currentButton;
 @end

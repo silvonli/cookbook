@@ -14,10 +14,6 @@
 #define RECIPEITEM_EDGE_TOP   10
 #define RECIPEITEM_EDGE_LEFT  28
 
-#define CATEGORYITEM_SPACING  20
-#define CATEGORYITEM_SIZE     CGSizeMake(66, 35)
-#define CATEGORYITEM_EDGE_TOP   50
-#define CATEGORYITEM_EDGE_LEFT  30
 
 @interface ViewController ()<GMGridViewDataSource, GMGridViewActionDelegate>
 
@@ -151,7 +147,7 @@
 
 - (void)viewDidUnload {
     [self setRecipeItemView:nil];
-    [self setCategoryView:nil];
+    [self setCurrentButton:nil];
     [super viewDidUnload];
 }
 @end
