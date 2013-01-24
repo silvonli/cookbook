@@ -8,17 +8,18 @@
 
 #import "ViewController.h"
 #import "RecipeItem.h"
+#import "CBDataManager.h"
 
 #define RECIPEITEM_SPACING    36
 #define RECIPEITEM_SIZE       CGSizeMake(302, 201)
-#define RECIPEITEM_EDGE_TOP   10
+#define RECIPEITEM_EDGE_TOP   0
 #define RECIPEITEM_EDGE_LEFT  28
 
 
 @interface ViewController ()<GMGridViewDataSource, GMGridViewActionDelegate>
 
-@property(nonatomic, strong) NSMutableArray *data;
-
+@property (nonatomic, strong) NSArray *currentData;
+@property (nonatomic, weak) UIButton *currentButton;
 @end
 
 @implementation ViewController
@@ -28,15 +29,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.data = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < 20; i ++)
-    {
-        [self.data addObject:[NSString stringWithFormat:@"A %d", i]];
-    }
-    
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryAll];
     self.currentButton = (UIButton*)[self.view viewWithTag:100];
-
     
     UIImage *image = [UIImage imageNamed:@"bg.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
@@ -47,23 +41,69 @@
     self.recipeItemView.actionDelegate = self;
     self.recipeItemView.dataSource = self;
     self.recipeItemView.centerGrid = NO;
-    self.recipeItemView.pagingEnabled = YES;
+    //self.recipeItemView.pagingEnabled = YES;
     self.recipeItemView.clipsToBounds = YES;
     self.recipeItemView.backgroundColor = [UIColor clearColor];
 
-    
-
 }
 
-
-- (IBAction)buttonTapped:(id)sender
+- (IBAction)buttonAll:(id)sender
+{    
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryAll];
+    self.currentButton.selected = NO;
+    self.currentButton = sender;
+    self.currentButton.selected = YES;
+    [self.recipeItemView reloadData];
+}
+- (IBAction)buttonSuChai:(id)sender
+{ 
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryShuCai];
+    self.currentButton.selected = NO;
+    self.currentButton = sender;
+    self.currentButton.selected = YES;
+    [self.recipeItemView reloadData]; 
+}
+- (IBAction)buttonPaiGu:(id)sender
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0), dispatch_get_current_queue(), ^{
-        self.currentButton.selected = NO;
-        self.currentButton = sender;
-        self.currentButton.selected = YES;
-    });
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryPaiGu];
+    self.currentButton.selected = NO;
+    self.currentButton = sender;
+    self.currentButton.selected = YES;
+    [self.recipeItemView reloadData];
 }
+- (IBAction)buttonZhuRou:(id)sender
+{
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryZhuRou];
+    self.currentButton.selected = NO;
+    self.currentButton = sender;
+    self.currentButton.selected = YES;
+    [self.recipeItemView reloadData];
+}
+- (IBAction)buttonJiRou:(id)sender
+{
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryJiRou];
+    self.currentButton.selected = NO;
+    self.currentButton = sender;
+    self.currentButton.selected = YES;
+    [self.recipeItemView reloadData];
+}
+- (IBAction)buttonNiuYang:(id)sender
+{
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryNiuYang];
+    self.currentButton.selected = NO;
+    self.currentButton = sender;
+    self.currentButton.selected = YES;
+    [self.recipeItemView reloadData];
+}
+- (IBAction)buttonYuXia:(id)sender
+{
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryYuXia];
+    self.currentButton.selected = NO;
+    self.currentButton = sender;
+    self.currentButton.selected = YES;
+    [self.recipeItemView reloadData];
+}
+
 - (IBAction)buttonOpenURL:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.haochi123.com"]];
@@ -75,7 +115,7 @@
 
 - (NSInteger)numberOfItemsInGMGridView:(GMGridView *)gridView
 {
-    return [self.data count];
+    return [self.currentData count];
 }
 
 - (CGSize)GMGridView:(GMGridView *)gridView sizeForItemsInInterfaceOrientation:(UIInterfaceOrientation)orientation
@@ -85,24 +125,21 @@
 
 - (GMGridViewCell *)GMGridView:(GMGridView *)gridView cellForItemAtIndex:(NSInteger)index
 {
-    //NSLog(@"Creating view indx %d", index);
-    
-
     GMGridViewCell *cell = [gridView dequeueReusableCell];
-    
+  
     if (!cell)
     {
         cell = [[GMGridViewCell alloc] init];
-        
-        UIImage *img = [UIImage imageNamed:@"葱爆羊肉1.jpg"];
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RecipeItem"owner:self options:nil];
-        RecipeItem *item  = [nib objectAtIndex:0];
-        item.name.text = @"skdfjakd;f";
-        item.name.textColor = [UIColor blackColor];
-        item.image.image = img;
-        
-        cell.contentView = item;
+        cell.contentView = [nib objectAtIndex:0];
     }
+    
+    RecipeItem *item = (RecipeItem *)cell.contentView;
+    
+    NSString *name = self.currentData[index];
+    item.name.text = name;
+    item.name.textColor = [UIColor blackColor];
+    item.image.image    = [UIImage imageNamed: [dataManager getRecipePicture:name]];
     
     return cell;
     

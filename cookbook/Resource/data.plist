@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>葱爆羊肉</string>
+		<key>picture</key>
+		<string>葱爆羊肉.jpg</string>
+		<key>category</key>
+		<integer>16</integer>
+		<key>ingredients</key>
+		<string>羊肉250克、大葱200克。</string>
+		<key>seasoning</key>
+		<string>大蒜、姜、植物油、香油、酱油、料酒、醋。</string>
+		<key>opration</key>
+		<string>1.将羊肉洗干净，切成4厘米长的薄片；
+2.将大葱洗干净，去掉烂叶，切成4厘米长的葱段；
+3.把蒜去皮，剁碎，姜适量，剁碎；
+4.锅中放油烧热，下入肉片煸炒至变色，加入料酒、姜末、酱油煸至入味；
+5.最后放入葱白、蒜末、醋，淋入香油即成。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>醋溜白菜</string>
+		<key>picture</key>
+		<string>醋溜白菜.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>大白菜300克。</string>
+		<key>seasoning</key>
+		<string>大蒜、姜、植物油、香油、醋、干红辣椒。</string>
+		<key>opration</key>
+		<string>1.将大白菜洗净，从中间切为两段，取根部菜帮，掰掉外面没有水分的老叶；
+2.用削萝卜皮似的方法把白菜削成斜刀片，切的不如削的好吃，如果刀法不好切块也可；
+3.锅中放油烧热，放入姜丝和去籽的干辣椒段；
+4.导入白菜迅速翻炒，加入醋，若长时间不翻动底部白菜受热过多变软，这样就不好吃了；
+5.大概翻炒半分钟，白菜有2分熟8分生，放入盐和鸡精，翻几下即可出锅。</string>
+		<key>tips</key>
+		<string>白菜要选水分多的，菜心最好，主要是白菜本身的甜脆口味。盐一定要后加，翻匀即出锅，不可多炒，使盐份停留在白菜
+外表。酸脆爽口，简单好做。朋友聚餐需要自己出道菜，又不能时间太长，这道菜绝对会让你赢得掌声的！</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>醋溜土豆丝</string>
+		<key>picture</key>
+		<string>醋溜土豆丝.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>土豆300克。</string>
+		<key>seasoning</key>
+		<string>干辣椒、精盐、白醋、植物油、花椒。</string>
+		<key>opration</key>
+		<string>1.把土豆去皮，切成细丝，越细越好，看刀功了。
+2.把切好的土豆丝过冷水去淀粉，要换几次水，这样炒出的菜口感脆。 
+3.准备好盐和白醋，用白醋会是菜品看着色彩干净。
+4.开火，倒入植物油，烧热，油温热时，把花椒粒放进去，炸出香味。 
+5.将花椒捞出，放入干辣椒微炸，爆出香味。 
+6.立刻倒入沥干水的土豆丝，掂锅翻炒几下。 
+7.半透明时候倒白醋，放入精盐，动作要快，再翻炒几下，使盐味更匀。
+8.菜熟装盘，一盘酸酸辣辣脆脆的土豆丝就可以上桌了。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>地三鲜</string>
+		<key>picture</key>
+		<string>地三鲜.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>茄子300克、土豆200克、青椒100克。</string>
+		<key>seasoning</key>
+		<string>大葱、大蒜、芡粉、色拉油、酱油、白砂糖、盐、高汤。</string>
+		<key>opration</key>
+		<string>大葱、大蒜、芡粉、色拉油、酱油、白砂糖、盐、高汤。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>豆干炒芹菜</string>
+		<key>picture</key>
+		<string>豆干炒芹菜.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>豆干250克、芹菜150克。</string>
+		<key>seasoning</key>
+		<string>葱、植物油、料酒、盐、味精、干辣椒。</string>
+		<key>opration</key>
+		<string>1.豆干切厚片，芹菜去掉根和叶后切段，香葱两棵切碎，料酒两大匙，盐、味精适量；
+2.将芹菜在沸水煮两分钟左右捞出沥干水份；
+3.锅内放油烧至八成热，倒入碎葱、干辣椒炒出香味，再把芹菜倒入炒一分钟；
+4.放入豆干炒一分钟，加盐；
+5.放味精翻炒几下出锅即成。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>豆豉鲮鱼油麦菜</string>
+		<key>picture</key>
+		<string>豆豉鲮鱼油麦菜.jpg</string>
+		<key>category</key>
+		<integer>33</integer>
+		<key>ingredients</key>
+		<string>油麦菜400克 鲮鱼罐头100克。</string>
+		<key>seasoning</key>
+		<string>植物油、酱油、蚝油、盐、大葱、姜、大蒜、味精、胡椒
+粉、淀粉、香油。
+植物油、酱油、蚝油、盐、大葱、姜、大蒜、味精、胡椒
+粉、淀粉、香油。
+</string>
+		<key>opration</key>
+		<string>1.油麦菜洗净切成三寸长的段，取鲮鱼切丁，豆豉留用；
+2.锅中加水烧开，将油麦菜氽透捞出；
+3.另起锅加油烧热，爆香葱姜蒜末，加豆豉、鱼、精盐、生抽、蚝油、味精、胡椒粉，炒匀，用少许湿淀粉勾芡，加香油
+即可；
+4.将炒好的豆豉鲮鱼浇在油麦菜上上桌。</string>
+		<key>tips</key>
+		<string>超市有豆豉鲮鱼罐头，如果觉得豆豉鲮鱼做起来麻烦也可以用买来的罐头代替，但是效果好像没有做出来的好。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>干煸豆角</string>
+		<key>picture</key>
+		<string>干煸豆角.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>猪肉100克、豆角（四季豆）250克、冬菜50克。</string>
+		<key>seasoning</key>
+		<string>大葱、姜、大蒜、盐、酱油、味精、白砂糖、香油、花
+生油、高汤。</string>
+		<key>opration</key>
+		<string>1.将豆角洗净，洗干净切成长约5厘米的段；
+2.猪肉切成末；
+3.冬菜，葱，姜，蒜均切成末；
+4.将豆角放入热油锅内过油至起皱捞出；
+5.锅内留少许油，下肉末煸炒，放入冬菜、葱、姜、蒜末，加适量酱油上色；
+6.加入过油的豆角，中火煸片刻；
+7.加高汤，收干汤汁，加调料，淋麻油，撒葱花，装盘即可。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>干煸牛肉丝</string>
+		<key>picture</key>
+		<string>干煸牛肉丝.jpg</string>
+		<key>category</key>
+		<integer>16</integer>
+		<key>ingredients</key>
+		<string>牛里脊肉250克、洋葱100克。</string>
+		<key>seasoning</key>
+		<string>姜、细蒜苗、豆瓣酱、植物油、酱油。</string>
+		<key>opration</key>
+		<string>1.将牛肉切成8厘米细丝，洋葱切片；
+2.油烧热,牛肉丝下锅炒散，加盐、姜丝继续煸炒；
+3.在牛肉水分将干，成深红色时加豆瓣酱炒香；
+4.肉丝煸酥时加酱油，洋葱炒熟，撒上蒜苗即可。</string>
+		<key>tips</key>
+		<string>1.此菜可根据自己的口味将洋葱换作芹菜段，如果喜欢辣椒也可在加入姜丝的同时加入几个干辣椒煸炒。
+2.由于菜品辣味较重，皮肤病患者请禁食。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>干烧鲫鱼</string>
+		<key>picture</key>
+		<string>干烧鲫鱼.jpg</string>
+		<key>category</key>
+		<integer>32</integer>
+		<key>ingredients</key>
+		<string>活鲫鱼4条、猪瘦肉100克。</string>
+		<key>seasoning</key>
+		<string>花生油、泡椒、精盐、醋、酱油、白糖、料酒、胡椒面、
+大酱、辣椒酱、大葱、大蒜、生姜、芝麻油、味精、淀粉。</string>
+		<key>opration</key>
+		<string>1.将鲫鱼宰杀，去鳞，去鳃，去内脏，清水洗净，在鱼身两面各斜划3-5刀，刀深约3毫米，并在鱼身上涂抹酱油；
+2.将猪瘦肉剁成末，大葱切末；
+3.炒锅上火，下油烧至八成热，将鲫鱼放入煎至两面呈金黄色，倒入漏勺沥油；
+4.原锅留少许油加热，下肉末，葱花，姜末，泡椒末炒出香味，加豆瓣酱，煸炒出红油，然后加绍酒，白糖；
+5.将煎好的鲫鱼整齐放入锅内，用小火焖烧五六分钟左右，至鲫鱼熟透；
+6.将鲫鱼取出摆进盘子；
+5.在底料中加味精，葱花，用旺火收紧卤汁，下湿淀粉勾芡，浇上烧热的熟猪油，起锅前淋少许醋和麻油，浇在鱼上即成。</string>
+		<key>tips</key>
+		<string>1.煎鱼的时候为防止鱼皮被粘掉，可在过加热后用生姜擦锅底，然后再加油。
+2.收汁前也可以把葱花换成蒜薹丁，无论颜色还是味道都是很不错的哦。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>宫保鸡丁</string>
+		<key>picture</key>
+		<string>宫保鸡丁.jpg</string>
+		<key>category</key>
+		<integer>8</integer>
+		<key>ingredients</key>
+		<string>鸡肉250克、花生仁50克、干红辣椒10克、大葱15克。</string>
+		<key>seasoning</key>
+		<string>姜、大蒜、盐、酱油、味精、醋、黄酒、白砂糖、淀粉
+、花椒、植物油。</string>
+		<key>opration</key>
+		<string>1.将鸡肉拍松，切成0.5厘米见方的十字花纹，再切成2厘米见方的丁；
+2.鸡丁放入碗内加盐、红酱油、湿淀粉、绍酒拌匀；
+3.干红辣椒去籽，切成2厘米长的节；
+4.取碗一只，放入盐、白糖、红酱油、醋、绍酒、味精、肉汤、湿淀粉，兑成滋汁；
+5.炒锅置旺火上，下油烧至六成热，放入干辣椒，待炸成棕红色时，下花椒、鸡丁炒散；
+6.再加入姜、蒜、葱炒出香味，烹入滋汁，加入花生仁，颠翻几下，起锅装盘即成。</string>
+		<key>tips</key>
+		<string>1.用嫩公鸡肉最好，鸡肉要拍松，拍后切丁，便于入味，花生仁不宜早下锅。
+2.调味中要以足够的盐作底味，甜、酸比重要酸稍重于甜。
+3.姜、葱、蒜仅取其辛香，用量不应过重，干辣椒以炒至色呈棕红为度，鸡丁上芡宜厚，滋汁用芡宜薄。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>锅包肉</string>
+		<key>picture</key>
+		<string>锅包肉.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>猪里脊肉400克、淀粉10克、胡萝卜50克、香菜10克。</string>
+		<key>seasoning</key>
+		<string>大葱、姜、大蒜、料酒、盐、酱油、醋、白砂糖、
+味精、色拉油。</string>
+		<key>opration</key>
+		<string>1.猪里脊肉切大约4毫米厚的片，加入料酒、盐、少许酱油拌均匀，腌渍入15分钟入味；
+2.把干淀粉放碗里用水泡上；
+3.胡萝卜、葱、姜切丝，蒜切末；
+4.酱油、醋、白糖以2：2：2.5比例加入小碗内，再加入精盐、味精，搅拌均匀，里面千万不要加水；
+5.刚才泡好的淀粉，水与淀粉会分离开，水在上面，小心的把水倒掉，把剩下的淀粉与肉片拌均匀；
+6.里脊肉下6成热的油锅里炸到外面发硬，中间的肉断生捞出；
+7.油温升到8成热的时候再放进去炸到金黄的时候捞出来；
+8.锅里留少许油，放入切好的葱、姜、蒜、胡萝卜炒几下，倒入对好的汁，烧开后浇在炸好的肉上，撒上香菜即成。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>红烧鸡翅</string>
+		<key>picture</key>
+		<string>红烧鸡翅.jpg</string>
+		<key>category</key>
+		<integer>8</integer>
+		<key>ingredients</key>
+		<string>鸡翅中400克。</string>
+		<key>seasoning</key>
+		<string>大葱、姜、辣椒(红、尖、干)、八角、花椒、酱油、
+盐、白砂糖、食用油。</string>
+		<key>opration</key>
+		<string>1.将鸡翅中洗干净放入碗内沥干水分备用；
+2.锅内放入少量食用油加入一两白糖，搅动使糖均匀受热，直到不断有棕色气泡生成；
+3.放入洗干净的鸡翅，中火翻炒五分钟，直到每块鸡翅变成漂亮的金黄色；
+4.放入一些热水，淹没鸡翅就行；
+5.放入调料，大火烧开，用中火炖20分钟左右；
+6.汤汁变少时改大火把汁收浓，以不干锅为准，起锅装盘。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>红烧排骨</string>
+		<key>picture</key>
+		<string>红烧排骨.jpg</string>
+		<key>category</key>
+		<integer>2</integer>
+		<key>ingredients</key>
+		<string>猪排骨400克。</string>
+		<key>seasoning</key>
+		<string>姜、大葱、八角、茴香籽、桂皮、草果、丁香、香叶、
+花椒、盐、味精、白砂糖、料酒、酱油、植物油。</string>
+		<key>opration</key>
+		<string>1.排骨宰成4厘米的段，放入沸水中除去血水，捞起洗净待用；
+2.姜切片，葱洗净去头拴成一结；
+3.锅内倒油，放入白糖，小火慢慢把糖炒化；
+4.待糖开始变成棕红色，且开始冒棕红色的泡沫时，马上把排骨倒入锅中炒匀；
+5.放入姜片、花椒和香料，炒出香味后倒入少许料酒和酱油上色，注入热水，加入盐和葱结；
+6.大火烧开后转至小火慢慢炖30-40分钟，至排骨熟软，夹去锅里的葱和大块头的香料；
+7.大火收汁，待汤汁变浓时，加入味精起锅即成。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>红烧肉</string>
+		<key>picture</key>
+		<string>红烧肉.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>五花肉1000克。</string>
+		<key>seasoning</key>
+		<string>大葱、姜、八角、香叶、花生油、酱油、白砂糖、盐、
+味精。</string>
+		<key>opration</key>
+		<string>1.五花肉选肥瘦相间的那种，记得要把皮洗干净；
+2.将带皮五花肉切成2厘米的方形块，葱、姜切成大片；
+3.锅内放油加热，放入白糖搅动，待变糖成棕色并不断有气泡冒出时放入肉块翻炒，至肉块变成金黄色；
+4.加水适量，用酱油、精盐、白糖、葱片、姜片、八角、香叶调味，改小火焖半小时即成。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>虎皮尖椒</string>
+		<key>picture</key>
+		<string>虎皮尖椒.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>尖椒300克。</string>
+		<key>seasoning</key>
+		<string>白糖、醋、盐、水淀粉、蒜、老抽、香油。</string>
+		<key>opration</key>
+		<string>1.先将尖椒洗净，去蒂去籽，切成段，葱姜蒜切末。
+2.锅内倒油烧至七成热，将尖椒段放入热油中，迅速捞起，控油备用。
+3.底油少许，葱、姜、蒜爆香，加入蚝油略炒，加入炸好的尖椒煸炒，加盐、味精、糖、老抽适量，待原料入味加入少
+许香油出锅即可。</string>
+		<key>tips</key>
+		<string>1.甜椒不要炸太久，以免过于熟软，炸到起泡即可。
+2.尖椒下锅时，千万注意油锅里会爆出油花，最好准备一个锅盖，挡住自己，手上穿上胶手套，以防烫伤。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>花生猪蹄</string>
+		<key>picture</key>
+		<string>花生猪蹄.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>猪脚一对（600g）、带皮花生300g</string>
+		<key>seasoning</key>
+		<string>大葱段、大蒜、老姜片、盐、冰糖、酱油、番茄酱。</string>
+		<key>opration</key>
+		<string>1.花生提前在盐水中浸泡3小时；
+2.将猪脚切成大块，放入一锅凉水中，大火加热，煮沸后撇去浮沫，煮10分钟后，捞出沥干水分。
+3.锅中放入冰糖，倒入1汤匙水，小火加热，等锅中温度逐渐升高后白糖融化成金黄色糖浆，注意要随时搅拌，避免烧焦，
+把猪脚块倒入锅中，搅拌均匀，使猪脚上裹满糖色。
+4.加入泡好的花生，放入葱段、蒜瓣、老姜片、酱油和番茄酱（放入蚝油，如果没有，就不放了），加2碗温水，盖上盖
+子，大火烧开，然后改小火炖1个半小时，当中可以去经常翻动一下。</string>
+		<key>tips</key>
+		<string>1.猪蹄中的胶原蛋白质在烹调过程中可转化成明胶、它能结合许多水，从而有效改善机体生理功能和皮肤组织细胞的储水
+功能，防止皮肤过早褶皱，延缓皮肤衰老，是一道即解馋又美容的好菜。
+2.去毛小窍门：洗净猪蹄，用开水煮到皮发胀，然后取出用指钳将毛拔除，省力省时。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>回锅肉</string>
+		<key>picture</key>
+		<string>回锅肉.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>五花肉250克、青椒45克、青蒜30克。</string>
+		<key>seasoning</key>
+		<string>豆瓣酱、甜面酱、酱油、料酒、盐3、味精、植物油、
+大葱、大蒜。</string>
+		<key>opration</key>
+		<string>1.将肥瘦相连的带皮猪肉刮洗干净，放入汤锅内，煮10分钟，至八成熟时捞出晾凉，切成5厘米长、4厘米宽、0.2厘
+米厚的片；
+2.将青蒜择洗干净，斜刀切成马耳朵形；
+3.郫县豆瓣酱剁成蓉。
+4.炒锅置中火上，放油烧热，下肉片略炒；
+5.倒出多余的油，加入姜片和蒜片略炒，再加入郫县豆瓣酱、甜面酱、料酒、精盐、味精、酱油翻炒，再放入青蒜，颠翻
+炒断生即可。</string>
+		<key>tips</key>
+		<string>1.由于选料为瘦猪肉，含动物脂肪不多，老幼、胖瘦者皆可食用。
+2.由于过辣，不宜给患有皮肤病、痔疮以及有慢性炎症的人食用，因为辛辣容易生热、动火。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>鸡蛋羹</string>
+		<key>picture</key>
+		<string>鸡蛋羹.jpg</string>
+		<key>category</key>
+		<integer>9</integer>
+		<key>ingredients</key>
+		<string>新鲜鸡蛋1个。</string>
+		<key>seasoning</key>
+		<string>盐、水、香油、葱花。</string>
+		<key>opration</key>
+		<string>1.新鲜鸡蛋一个，磕入碗中，用打蛋器调散，加入很少量盐调匀，这时的蛋液会比之前稀、黄；
+2.空碗内加水，最好是温水，冷水不太好，热水就更不行了，以冲进去就成蛋花了；
+3.水中加入少量香油调匀后掺入蛋液里面调匀（根据个人口味再加入少量猪油）；
+4.烧一锅清水，放上蒸隔，水一定要开以后，再把蛋液放上蒸隔，然后开小火，锅盖一定要留缝，不要盖严实了，这样蒸
+出来的蛋羹绝对不会有蜂窝眼，口感也不会老；
+5.大概6-7分钟，鸡蛋羹就应该差不多好了。撒上一些葱花，滴上几滴蒸鱼豉油就可以享用啦！</string>
+		<key>tips</key>
+		<string>1.根据个人口味，最后可以加入炒好肉末或者香菇末之类的做调味料。
+2.大概6-7分钟就差不多了，如果更喜欢少硬口味的时间可以稍长一些，但不能过长，否则就很硬。
+3.鸡蛋喝水的比例大概为2：5。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>家常豆腐</string>
+		<key>picture</key>
+		<string>家常豆腐.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>北豆腐500克、猪肉100克、青蒜50克。</string>
+		<key>seasoning</key>
+		<string>郫县豆瓣酱、酱油、料酒、精盐、淀粉、鸡精。</string>
+		<key>opration</key>
+		<string>1.把豆腐切成3乘2厘米的厚片，猪肉切成薄片，青蒜切段。
+2.锅中放油烧热，将豆腐煎成黄色但不焦糊，捞出。 
+3.锅中留少许油，将肉片炒香，加豆瓣酱炒出红色，加入酱油、料酒，加足水，随即放入豆腐、盐、鸡精。 
+4.用微火将豆腐烧透，加入青蒜，勾入淀粉和水兑成的汁，将汤收浓，即可出锅。</string>
+		<key>tips</key>
+		<string>1.豆腐在烹制前用盐开水烫透，可以去除豆腥味。
+2.水别放太少，鸡精多些味道更好，豆腐一定要慢火烧透才入味。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>尖椒牛柳</string>
+		<key>picture</key>
+		<string>尖椒牛柳.jpg</string>
+		<key>category</key>
+		<integer>16</integer>
+		<key>ingredients</key>
+		<string>牛里脊肉400克、尖椒200克。</string>
+		<key>seasoning</key>
+		<string>酱油、白砂糖、料酒、淀粉、碱、植物油、干辣椒、
+香油、鸡精、虾酱。</string>
+		<key>opration</key>
+		<string>1.牛里脊切条，加入酱油、白糖、淀粉上浆拌匀；
+2.尖椒洗净拍松切段；
+3.锅烧热加入植物油，待油温升至三成热，下牛柳划熟捞出；
+4.锅再次烧热入油，待油温升至八成热，放入干辣椒，待辣椒变色；
+5.加入牛柳尖椒翻炒，尖椒变软起皱，放入鸡精，出锅装盘。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>尖椒土豆丝</string>
+		<key>picture</key>
+		<string>尖椒土豆丝.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>土豆250克、青椒1个、红椒1个。</string>
+		<key>seasoning</key>
+		<string>植物油、盐、胡椒粉、鸡精。</string>
+		<key>opration</key>
+		<string>1.青椒、红椒去蒂和籽，洗净，切成6厘米长的丝；
+2.土豆去皮，洗净，切成6厘米长，2毫米见方的丝，入沸水汽锅烫一下后捞起，沥干水分；
+3.炒锅放在火上，下油加热至六成油温，下青椒丝、土豆丝，烹调料，快速翻炒；
+4.见土豆丝显透明色，即放盐和胡椒粉、鸡精调味，翻匀装盘即可。</string>
+		<key>tips</key>
+		<string>好吃好做的菜品，只是要想切出图片上那么均匀细致的土豆丝可不是一般人能做到的，当然可以用擦的，不过个人感觉还
+是切的味道好些。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>酱排骨</string>
+		<key>picture</key>
+		<string>酱排骨.jpg</string>
+		<key>category</key>
+		<integer>2</integer>
+		<key>ingredients</key>
+		<string>排骨400克、干香菇6朵。</string>
+		<key>seasoning</key>
+		<string>葱、姜、盐、料酒、黄豆瓣酱、芝麻酱。</string>
+		<key>opration</key>
+		<string>1.香菇泡发洗净减去根部，葱斜切段，姜切片，排骨放入锅中焯水，捞出冲去血沫，控干水分；
+2.排骨加料酒，姜片，一部分葱腌制20分钟，锅中加油烧热，把排骨两面煎黄；
+3.炒锅留底油烧五成热，加豆瓣酱，芝麻酱炒香，加葱姜一起炒出味，加适量的水成汤汁；
+4.煎好的排骨放入砂锅中，加香菇调味汤汁，大火烧开转小火，30分钟加少许盐出锅。</string>
+		<key>tips</key>
+		<string>1.香菇是做调味用的，不喜欢的也可以不放。
+2.此菜颜色较重，皮肤色素沉积较重的同学要少吃哦。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>韭菜炒鸡蛋</string>
+		<key>picture</key>
+		<string>韭菜炒鸡蛋.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>韭菜300克、鸡蛋2个。</string>
+		<key>seasoning</key>
+		<string>植物油、精盐、味精。</string>
+		<key>opration</key>
+		<string>1.将韭菜摘好，清洗干净，切成4厘米长的段，鸡蛋打入碗中打匀，放入适量精盐待用。
+2.将油放入锅内，烧热后下入鸡蛋，炒熟后，放入韭菜快速煸炒，同时加入精盐、味精，翻炒均匀即可盛盘。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>可乐鸡翅</string>
+		<key>picture</key>
+		<string>可乐鸡翅.jpg</string>
+		<key>category</key>
+		<integer>8</integer>
+		<key>ingredients</key>
+		<string>鸡翅250克、可乐250克。</string>
+		<key>seasoning</key>
+		<string>姜、八角、花生油、白砂糖、酱油、柠檬汁。</string>
+		<key>opration</key>
+		<string>1.鸡翅洗净。用刀尖划开约两厘米的口子（深度及鸡肉），以便入味及快熟。 
+2.适量酱油、盐、白酒、生粉及少量白糖拌匀，将鸡翅腌半小时左右。白糖加极少量即可，因为可乐中已含糖份，如按
+平时腌肉的分量放糖，加可乐后会过甜。 
+3.加入适量油拌匀，加姜丝。先放油的话会将鸡翅封住，其他味料难以入味。 
+4.倒入可乐，能浸过鸡翅即可，腌15分钟左右。用可口可乐是因为它没有百事可乐这么甜。 
+5.烧热油，姜丝、蒜头爆香后捞起扔掉。 
+6.将鸡翅一件件慢慢放到油里煎至两面金黄。注意锅不要烧得太热，否则鸡翅容易焦。 
+7.倒入约1/2罐可乐，加盖。烧开后文火焖。 
+8.10分钟左右可乐变成糊状即可出锅，上桌前滴上柠檬汁。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>苦瓜煎蛋</string>
+		<key>picture</key>
+		<string>苦瓜煎蛋.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>苦瓜300克、鸡蛋150克。</string>
+		<key>seasoning</key>
+		<string>盐、鸡精、花生油。</string>
+		<key>opration</key>
+		<string>1.苦瓜洗净，去瓤，切成碎末；
+2.将鸡蛋磕入碗内，按照一个方向用力打至起泡；
+3.打发起泡的蛋内和入苦瓜末，苦瓜的量可根据个人口味调整；
+4.再放入适量的盐和鸡精调和均匀；
+5.将色拉油用大火烧至8成热；
+6.沿着锅边将苦瓜丁蛋液匀速倒入，转动炒锅使鸡蛋液布满整个锅底；
+7.待蛋液凝固成形时，用锅铲轻轻翻面，煎至蛋熟即可。</string>
+		<key>tips</key>
+		<string>1.苦瓜不但清热去火，据说还是非常有效的减肥菜哦。
+2.炒锅最好用平底锅，这样做出来的煎蛋平整有型，上桌前最好先切成小块，否则吃起来会很狼狈的。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>栗子焖鸡</string>
+		<key>picture</key>
+		<string>栗子焖鸡.jpg</string>
+		<key>category</key>
+		<integer>8</integer>
+		<key>ingredients</key>
+		<string>栗子6两、鸡一只、天目笋干少许。</string>
+		<key>seasoning</key>
+		<string>食用油、姜、老抽、盐、八角、花椒。</string>
+		<key>opration</key>
+		<string>1.栗子剥壳煮熟，笋干泡发切段；
+2.鸡切小块下油锅煸干水气，加姜片翻炒；
+3.加老抽酱油炒至上色，再放盐、八角、花椒炒香；
+4.倒入泡发好的栗子和笋段，加温开水淹没鸡块；
+5.烧开后改小火焖半小时至鸡块和栗子熟烂；
+6.开锅大火收汁即成。</string>
+		<key>tips</key>
+		<string>做栗子焖鸡不用放糖，栗子本身带甜，吸饱了鸡的鲜香，美味啊.鸡又带着栗子的甘甜，还有笋干的咸鲜，无与伦比。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>溜肝尖</string>
+		<key>picture</key>
+		<string>溜肝尖.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>猪肝300克、黄瓜25克、木耳25克。</string>
+		<key>seasoning</key>
+		<string>花生油、酱油、黄酒、醋、白砂糖、盐、味精、淀粉、姜、
+大蒜、花椒。</string>
+		<key>opration</key>
+		<string>1.将猪肝整理干净，剔除筋膜，切成6厘米长，2厘米宽，3毫米厚的片，放入碗里，加精盐、味精、料酒、淀粉浆拌均匀
+备用；
+3.木耳用水泡发，洗净根部的沙子，放入碗中待用；
+4.黄瓜切成薄片，姜切末，蒜去皮切片；
+5.用小碗加酱油、醋、绍酒、白糖、味精、鲜汤、淀粉兑成芡汁；
+6.锅上火加适量油，烧至五成热时，下浆好的肝片滑散滑透，盛出待用；
+7.锅内留少许底油，用姜丝、蒜片炸锅，下黄瓜片、木耳和滑好的肝片，泼上兑好的芡汁，煸炒均匀，淋花椒油，出勺装
+盘上桌即可。</string>
+		<key>tips</key>
+		<string>猪肝软而滑，切的时候要小心切手。木耳要选用上好的东北木耳。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>熘肥肠</string>
+		<key>picture</key>
+		<string>熘肥肠.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>猪净熟肥肠250克。</string>
+		<key>seasoning</key>
+		<string>水发玉兰片、水烫胡萝卜、水发冬菇、猪清油、酱油、醋、
+花椒水、绍酒、味精、葱、姜、蒜、香菜梗、鸡汤、湿淀粉
+干辣椒。</string>
+		<key>opration</key>
+		<string>1.把熟肥肠切成斜刀片（约一分半厚），将水发玉兰片、胡萝卜切成片，葱切成象眼块，姜、蒜切成末，香菜切成段，冬
+菇切两半；
+2.用酱油、醋、花椒水、绍酒、味精、湿淀粉、鸡汤对成汁水；
+3.勺内放猪清油，油热八成时，将肥肠倒入勺内冲炸片刻，倒入漏勺控净油；
+4.勺内放少量油烧热，用葱、姜、蒜炸锅，放入玉兰片、胡萝卜、冬菇略加煸炒，接着将冲炸好的肥肠倒入勺内，将对好
+的汁水烹上，再放入香菜段，颠炒几下出勺即成。</string>
+		<key>tips</key>
+		<string>1.买现成的熟肥肠腥味会小一些，如果喜欢原味浓些的，可以买新鲜的肥肠，不过清洗起来比较麻烦。
+2.洗肥肠的小窍门：用面粉和苏打反复揉搓几次，再漂洗几次就可得到干净无异味的肥肠。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>麻婆豆腐</string>
+		<key>picture</key>
+		<string>麻婆豆腐.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>豆腐500克、肥瘦猪肉200克。</string>
+		<key>seasoning</key>
+		<string>豆瓣辣酱、姜、大蒜、花椒粉、酱油、味精、盐、白砂糖、
+香油、植物油、淀粉、小葱。</string>
+		<key>opration</key>
+		<string>1.将豆腐切成3厘米的方块，姜,蒜拍碎切末，葱切珠花；
+2.将猪肉切成末，淀粉调成芡汁；
+3.锅内注油烧热，下入肉末，加入辣豆瓣，姜末，蒜末，高汤和调料，高汤可用清水代替；
+4.放入豆腐轻轻翻炒，盖盖文火焖5分钟；
+5.勾上芡汁，撒入葱花和花椒粉，装盘即可。</string>
+		<key>tips</key>
+		<string>1.推荐使用老豆腐，劲道不易碎，如果没有老豆腐，可将嫩豆腐放开水里稍微煮一下再切丁。
+2.豆瓣酱郫县的味道很经典的，而且还不贵。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>木须肉</string>
+		<key>picture</key>
+		<string>木须肉.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>猪肉150克、鸡蛋2个、黄瓜50克、木耳5克。</string>
+		<key>seasoning</key>
+		<string>大葱、姜、盐、料酒、香油、花生油、味精、淀粉。</string>
+		<key>opration</key>
+		<string>1.鸡蛋磕入碗中，用筷子搅匀，留出一点蛋清给肉片上浆。
+2.将猪瘦肉切成薄片，用少许蛋清、湿淀粉上浆拌匀。
+3.黄瓜斜刀切成长片，放平后直刀切成菱形片。干木耳泡发好，撕成小块。
+4.炒锅加油烧至五成热时，将肉片放入滑散，捞出沥油。
+5.锅内留底油烧热，放入葱花、姜末爆锅，烹入料酒、一点清水，加入肉片翻炒片刻，用精盐、味精调味，加入木耳、
+黄瓜片翻炒，开锅后浇入鸡蛋液慢慢炒匀，淋上香油出锅。</string>
+		<key>tips</key>
+		<string>1.鲜猪肉软而滑不易切薄片，可先放冰箱冷冻几个小时，起冰变硬后再切，注意不要时间过长否则会切不动的。
+2.烹锅千万不能加水过多了，否则接下来的鸡蛋会变成煮鸡蛋，或者也可以事先把鸡蛋炒一下，这时候直接倒进去。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>清蒸武昌鱼</string>
+		<key>picture</key>
+		<string>清蒸武昌鱼.jpg</string>
+		<key>category</key>
+		<integer>32</integer>
+		<key>ingredients</key>
+		<string>武昌鱼1000克。</string>
+		<key>seasoning</key>
+		<string>小葱、姜、盐、黄酒、味精、姜、胡椒粉、植物油。</string>
+		<key>opration</key>
+		<string>1.将武昌鱼治净，在鱼身两面斜着划上几刀，以方便入味；
+2.锅烧热，倒入清水烧沸，将打有花刀的武昌鱼下沸水锅中烫一下，立即捞出入清水盆内，刮尽鱼鳞，洗净沥干水分；
+3.用精盐、黄酒、味精抹在鱼身上腌制20分钟以入味；
+4.将小葱、姜分别切成细丝，锅中把植物油烧热；
+5.葱丝、姜丝也放在鱼身上，淋上热油；
+6.将加工好的整鱼连同盘子放入蒸笼用旺火蒸；
+7.蒸至鱼眼凸出，肉质松软时取出，撒上白胡椒粉，调好酱油、香醋的小味碟，即成。 </string>
+		<key>tips</key>
+		<string>1.鱼肉在沸水中略烫时要随烫随提，以免鱼肉烫老。
+2.上笼蒸鱼时，要保持旺火满气，蒸至鱼眼凸出为好。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>软炸里脊</string>
+		<key>picture</key>
+		<string>软炸里脊.jpg</string>
+		<key>category</key>
+		<integer>4</integer>
+		<key>ingredients</key>
+		<string>猪里脊肉200克、鸡蛋4个。</string>
+		<key>seasoning</key>
+		<string>味精、料酒、干淀粉、盐少许、香油、花椒盐1碟、植物油。</string>
+		<key>opration</key>
+		<string>1.将里脊肉洗净，切成长4厘米、宽2厘米的薄片，放在碗内，加盐、味精、料酒拌匀，腌渍入味；
+2.将蛋清倒入碗内，用筷子顺一个方向连续抽打起泡沫，直到能立住筷子为止，再加干淀粉，乃顺同一方向搅拌均匀，制
+成蛋泡糊；
+3.炒锅上火，放入大油，烧至五成熟，将腌渍好的里脊肉分片粘上蛋泡糊后放入，用筷子轻轻翻动，大约5分钟炸熟捞出
+装盘。淋上香油即成。可蘸花椒盐食之。</string>
+		<key>tips</key>
+		<string>1.椒盐的做法：将白花椒粒炒干出香味，打成粉末，把红干小辣椒打成粉末，少许味精也打成粉末，把精盐也打成粉末，
+下锅炒热再加以上三种粉末，炒匀就是椒盐了。需要辣些的就放多些花椒和红椒粉。注意干炒不放油。
+2.炸的时候油要足够，放入肉片后要滑散，不能粘连在一起。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>水煮肉片</string>
+		<key>picture</key>
+		<string>水煮肉片.jpg</string>
+		<key>category</key>
+		<integer>20</integer>
+		<key>ingredients</key>
+		<string>猪里脊肉200克（或者牛柳）、蒜苗50克、芹菜50克和自己
+喜爱的蔬菜。</string>
+		<key>seasoning</key>
+		<string>花椒和干辣椒节、蒜片、姜片、葱节、豆瓣、花椒面、辣
+椒面、蒜蓉、葱花、盐、胡椒粉、少许酱油、蛋清、芡粉。</string>
+		<key>opration</key>
+		<string>1.猪里脊肉切成薄片（逆着纹路切）用腌料码味15分钟；
+2.蒜苗，芹菜和一些其他你喜欢的蔬菜洗净切成长节；
+3.净锅热油，6成热时放花椒和干辣椒节、蒜片、姜片、葱节、郫县豆瓣炒出香味，然后掺入适量高汤或者清水，放适量
+盐烧开，把蔬菜放下去稍稍烫一下就捞起来放在碗中；
+4.把肉片滑入锅中的水中，拨散开，断生后捞起来放在刚才的菜上面，锅中的汤也倒入碗中，不要太少，以不要莫过肉片
+为准；
+5.在肉片上面撒上比较大量的花椒面和干辣椒面，适量蒜蓉和葱花备用，另起一锅，倒入多多的油，烧烫，浇在肉片上即
+可。</string>
+		<key>tips</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>蒜薹炒肉丝</string>
+		<key>picture</key>
+		<string>蒜薹炒肉丝.jpg</string>
+		<key>category</key>
+		<integer>5</integer>
+		<key>ingredients</key>
+		<string>猪肉200克，蒜薹200克。</string>
+		<key>seasoning</key>
+		<string>食用油、味精、干辣椒、淀粉。</string>
+		<key>opration</key>
+		<string>1.猪肉切丝，用湿淀粉上浆；
+2.蒜薹洗净切寸节；
+3.干辣椒切段去籽，味精、少量淀粉兑成滋汁；
+4.锅内加油烧熟，下干辣椒段炒出香味，倒入肉丝翻炒1分钟；
+5.加入蒜薹、精盐炒熟，起锅前勾上滋汁，出锅即成。</string>
+		<key>tips</key>
+		<string>1.此菜可谓简单易做，大众口味，可以根据自己的口味随意DIY。
+2.肉丝用蛋清或者湿淀粉拌后炒出来肉质软嫩，如果不喜欢就直接炒肉丝。
+3.蒜薹直接炒时间长，容易变黑，可以先用开水焯一下，这样炒的时候省时省力，颜色鲜绿。
+4.干辣椒也可以换作郫县豆瓣酱，风味独特哦，自己动手试试吧。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>糖醋带鱼</string>
+		<key>picture</key>
+		<string>糖醋带鱼.jpg</string>
+		<key>category</key>
+		<integer>32</integer>
+		<key>ingredients</key>
+		<string>带鱼500克、鸡蛋2个。</string>
+		<key>seasoning</key>
+		<string>醋、白糖、酱油、精盐、清汤、姜末、葱末、蒜末各少许、
+湿淀粉、花生油、香菜。</string>
+		<key>opration</key>
+		<string>1.带鱼洗净后去头、尾，切长段，用盐、料酒腌渍约半小时，然后放入由鸡蛋和干淀粉调成的蛋糊中挂浆。
+2.炒锅倒油，旺火烧至七成热，把鱼放入油锅内。这时需用铲刀将鱼托住至鱼全部呈金黄色时，取出放入盘内。
+3.锅内留少许底油，放入大料、葱段、姜片、蒜片爆出香味后，添加白糖、料酒、生抽及适量清水，煮至开锅后，将炸好
+的带鱼放进锅里，待煮至汤汁剩下1/3时，烹入醋，撒上香菜段即可。</string>
+		<key>tips</key>
+		<string>如何挑选带鱼：第一是选择品种，我国的东海带鱼比较好，头比较尖窄，不要那种头宽宽的；尾巴要细长的，背部千万不
+能有那种像珠子一般的骨节，那是外国带鱼，我们俗称朝鲜带鱼，味道较差。第二则是外观，要银光闪亮，肚子最好未破，
+另外腮要比较鲜红。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>糖醋排骨</string>
+		<key>picture</key>
+		<string>糖醋排骨.jpg</string>
+		<key>category</key>
+		<integer>2</integer>
+		<key>ingredients</key>
+		<string>猪净排500克。</string>
+		<key>seasoning</key>
+		<string>调和油、姜片、红糖、冰糖、芝麻。</string>
+		<key>opration</key>
+		<string>1.将猪排斩成约l寸长的小块，用开水焯一下，去掉漂去血水；
+2.继续炒，待排骨炒干，表面有一点焦黄时加红糖、冰糖继续翻炒，火一定要最小，糖易糊；
+3.炒出香味以后放醋，勾一点点芡；
+4.起锅了，撒上炒熟的芝麻，点缀一下下。</string>
+		<key>tips</key>
+		<string>放糖的时候也可以放些番茄酱，增强酸甜口味。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>土豆烧牛肉</string>
+		<key>picture</key>
+		<string>土豆烧牛肉.jpg</string>
+		<key>category</key>
+		<integer>16</integer>
+		<key>ingredients</key>
+		<string>牛肋肉500克、土豆250克、胡萝卜50克。</string>
+		<key>seasoning</key>
+		<string>八角、黄酒、酱油、大葱、盐、姜、味精、白砂糖、植物
+油、淀粉、花椒。</string>
+		<key>opration</key>
+		<string>1.把牛肉洗净切成3厘米长，手指般粗细的条，用刀拍松，这样易入味；把牛肉条放入沸水锅中焯透捞出；
+2.土豆削去皮洗净，切成滚刀块；胡萝卜洗干净，切成滚刀块；
+3.葱切成段，姜拍松切成块；
+5.勺内放植物油烧热，加入葱段、姜块炝锅，然后将牛肉入锅，加上酱油、花椒煸炒，再加上肉汤（或热水）500毫升，
+放入黄酒、白糖、八角同烧；水要一次加足，中途添水会使肉变硬；
+6.待烧沸后，改小火慢炖2个小时至熟烂，胡萝卜在1个小时的时候加入，最后20分钟放入土豆炖，待肉和土豆熟烂时，取
+出葱段、姜块和大料，加上精盐、味精，用旺火烧沸收汁，汤变得粘稠即可，滴入香油出锅。</string>
+		<key>tips</key>
+		<string>1.烹作前牛肉须用沸水焯透，除去膻味和血迹，牛肉条不宜过大，否则不易熟烂，放几颗山楂可以使牛肉更容易熟烂。
+2.要掌握好火候，应先旺火烧开，小火煨熟，炒锅要2个小时左右，高压锅40分钟左右。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>西红柿炒鸡蛋</string>
+		<key>picture</key>
+		<string>西红柿炒鸡蛋.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>西红柿250克、鸡蛋4个。</string>
+		<key>seasoning</key>
+		<string>植物油、盐、白糖、料酒。</string>
+		<key>opration</key>
+		<string>1.西红柿洗干净，切西瓜的方法切好备用；
+2.将鸡蛋打入碗中，用筷子用力打匀起泡，放入盐和料酒搅和匀；
+3.锅烧热，放入油，加热到10分热，倒入鸡蛋，筷子翻动炒成金黄色，盛出待用；
+4.锅内加少许油加热，即把番茄投入锅内，炒2分钟，即把蛋倒入翻炒，加盐炒和白糖翻炒1分钟即好。</string>
+		<key>tips</key>
+		<string>1.炒鸡蛋的油一定要够热，鸡蛋打的一定到起泡，这样炒的鸡蛋才够松软。
+2.糖的量根据个人口味适量添加，不喜欢甜的可以不加。
+3.既简单又好吃的家常菜，老少皆宜。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>西红柿炖牛腩</string>
+		<key>picture</key>
+		<string>西红柿炖牛腩.jpg</string>
+		<key>category</key>
+		<integer>16</integer>
+		<key>ingredients</key>
+		<string>牛腩2斤、西红柿2个、胡萝卜2根。</string>
+		<key>seasoning</key>
+		<string>花椒、大料、葱、姜、八角。</string>
+		<key>opration</key>
+		<string>1.将牛腩切成块，开水烫洗2次，一定要用开水，否则牛腩会发紧，不易烂；
+2.白瓷大煲中加入白开水，将牛腩放入，同时将葱、姜、桂皮、八角放入，加一瓶盖的醋（秘籍：这样很轻易烂，而且还
+去掉异味），盖上盖子，文火炖；
+3.半小时后，把葫芦卜去皮，切成滚刀块，放入煲中；
+4.再过半小时，西红柿去皮，切成碎丁，放入煲中；
+5.再过半小时，放入少许酱油提色，也可以加番茄酱提色；
+6.再过半小时，放入盐，盐一定要后放，这样才不破坏营养；
+7.再过半小时就可以起锅上桌了这样的做法是可以有汤喝的，水要一次放足，全程用文火炖，并不费煤气。</string>
+		<key>tips</key>
+		<string>1.假如觉得中间放东西太麻烦，可以一次都放进去，分段放主要是考虑营养流失的问题，但是盐一定要最后放。
+2.有人说这是一道适合懒人的美味，所有的佐料放齐了就可以去睡觉了。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>香菇油菜</string>
+		<key>picture</key>
+		<string>香菇油菜.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>油菜心400克、香菇150克。</string>
+		<key>seasoning</key>
+		<string>料酒、盐、蒜、味精、鸡油、花生油、淀粉、白砂糖。</string>
+		<key>opration</key>
+		<string>1.香菇去老蒂洗净切厚片,油菜洗干净每棵对剖洗净备用；
+2.锅里放清水加少许盐，烧开后把油菜放入断生捞起，整齐地摆在盘子的四周；
+3.炒锅放油烧热下香菇翻炒几下，放入调料，再翻炒几下，加入蒜，用淀粉调汁勾芡即成； 
+4.把炒好的香菇铲起放在油菜中间即可。</string>
+		<key>tips</key>
+		<string>1.油菜焯水时间一定不要过长，否则变成煮油菜了就不好吃了；
+2.如果觉得焯水的油菜味道不够浓，也可以做炒的，油菜叶掰开，旺火烧热油，导入油菜迅速翻炒几下，一样到八成熟。
+3.出锅前加一点盐和鸡精，盛出待用，等香菇炒好后导入油菜翻匀就可以出锅了，这是另一种口味的香菇油菜。
+4.此法也可单炒油菜，就是爆炒油菜了，清脆爽口。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>油爆青虾</string>
+		<key>picture</key>
+		<string>油爆青虾.jpg</string>
+		<key>category</key>
+		<integer>32</integer>
+		<key>ingredients</key>
+		<string>大青虾500克。</string>
+		<key>seasoning</key>
+		<string>葱，姜，料酒，酱油，盐，鸡精，白糖，醋，香油。</string>
+		<key>opration</key>
+		<string>1.将青虾剪去虾枪，虾须，剔除虾线，洗净，沥干水分，加入盐，料酒腌制5分钟；
+2.葱、姜切成末，料酒，盐，鸡精，白糖，醋，香油兑成汁；
+3.烧热花生油，把青虾炸熟捞出控油；
+4.锅内加少许油放入姜、葱末炒香；
+5.放入炸好的虾，烹入对好的汁，炒匀出锅即成。</string>
+		<key>tips</key>
+		<string>挑虾线方法：用牙签从虾背的倒数第一节与倒数第二节中间穿过；向上挑断虾线，再捏住断开的线头，抻出虾线。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>鱼香茄子</string>
+		<key>picture</key>
+		<string>鱼香茄子.jpg</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>ingredients</key>
+		<string>茄子450克、猪肉120克。</string>
+		<key>seasoning</key>
+		<string>淀粉、香油、胡椒粉、植物油、大蒜、姜、大葱、白砂糖、
+盐、醋、料酒、酱油、豆瓣辣酱。</string>
+		<key>opration</key>
+		<string>1.茄子洗净削皮，切成5厘米长的段；
+2.将绞碎的猪肉、蒜末、姜末、大葱花、辣豆瓣酱混合在一起搅匀；
+3.将糖、盐、醋、料酒、酱油、高汤（或水）调成汁备用，糖醋的比例要不断摸索才能拿准；
+4.油入锅烧热，放入茄子，翻炒至软，约5分钟，盛起备用；
+5.锅中留下1汤匙的油加热，放入混合好的绞肉翻炒至猪肉变色；
+6.加入调好的调味汁烧开，放入炒过的茄子，待滚后转至中火，盖上锅盖焖1分钟；
+7.用淀粉加水勾芡，加上麻油及胡椒粉后即可供食，淀粉勾的要薄一些，要不然就没有汁了。</string>
+		<key>tips</key>
+		<string>炒茄子的时候用油较多，此菜对减肥的同学来说稍微腻了点，不过确实是非常的好吃哦。</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>鱼香肉丝</string>
+		<key>picture</key>
+		<string>鱼香肉丝.jpg</string>
+		<key>category</key>
+		<integer>5</integer>
+		<key>ingredients</key>
+		<string>猪肉200克、青椒30克、胡萝卜15克、木耳5克。</string>
+		<key>seasoning</key>
+		<string>辣椒、姜、大葱、大蒜、白砂糖、酱油、醋、植物油、淀
+粉、盐。</string>
+		<key>opration</key>
+		<string>1.将木耳泡发切丝，胡萝卜洗净切丝，青椒洗净切丝，将姜、葱、蒜切末，辣椒剁碎去籽，淀粉加水调湿备用。
+2.将瘦猪肉切成长约5厘米的细丝，加入盐以及调好的水淀粉的一半，用手抓匀。剩余的水淀粉与白糖、酱油、醋再调成
+汁备用。
+3.将植物油入锅烧热，炸香干辣椒，放入肉丝煸炒，随即放入青椒丝、胡萝卜丝、木耳丝、姜、葱、蒜等作料，急火快炒
+几下，肉丝熟后立即倒入调好的淀粉汁勾芡，炒匀即可出锅，如有红油可稍微加点，颜色更好看。</string>
+		<key>tips</key>
+		<string>1.由于选料为瘦猪肉，含动物脂肪不多，老幼、胖瘦者皆可食用。
+2.由于过辣，不宜给患有皮肤病、痔疮以及有慢性炎症的人食用，因为辛辣容易生热、动火。
+3.这道菜在北方可谓称得上No.1经典菜肴，百吃不厌！</string>
+	</dict>
+</array>
+</plist>
