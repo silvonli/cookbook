@@ -34,7 +34,7 @@ typedef enum CBRecipeCategory: NSUInteger
 
 - (NSString *)getRecipePicture:(NSString *)name;
 - (CBRecipeCategory)getRecipeCategory:(NSString *)name;
-- (NSString *)getRecipeIngredients:(NSString *)name;
+- (NSAttributedString *)getRecipeIngredients:(NSString *)name;
 - (NSString *)getRecipeSeasoning:(NSString *)name;
 - (NSString *)getRecipeOpration:(NSString *)name;
 - (NSString *)getRecipeTips:(NSString *)name;

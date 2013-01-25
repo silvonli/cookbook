@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "RecipeItem.h"
 #import "CBDataManager.h"
+#import "RecipeViewController.h"
 
 #define RECIPEITEM_SPACING    36
 #define RECIPEITEM_SIZE       CGSizeMake(302, 201)
@@ -138,18 +139,12 @@
     
     NSString *name = self.currentData[index];
     item.name.text = name;
-    item.name.textColor = [UIColor blackColor];
-    item.image.image    = [UIImage imageNamed: [dataManager getRecipePicture:name]];
+    item.picture.image = [UIImage imageNamed: [dataManager getRecipePicture:name]];
     
     return cell;
     
 }
 
-
-- (BOOL)GMGridView:(GMGridView *)gridView canDeleteItemAtIndex:(NSInteger)index
-{
-    return NO; //index % 2 == 0;
-}
 
 
 //////////////////////////////////////////////////////////////
@@ -158,24 +153,16 @@
 
 - (void)GMGridView:(GMGridView *)gridView didTapOnItemAtIndex:(NSInteger)position
 {
-    NSLog(@"Did tap at index %d", position);
+    RecipeViewController * rvc = [self.storyboard instantiateViewControllerWithIdentifier:@"RVCIdentifier"];
+    rvc.name = self.currentData[position];
+    [self presentViewController:rvc animated:NO completion:nil];
 }
 
-- (void)GMGridViewDidTapOnEmptySpace:(GMGridView *)gridView
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    NSLog(@"Tap on empty space");
+    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
-
-- (void)GMGridView:(GMGridView *)gridView processDeleteActionForItemAtIndex:(NSInteger)index
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm" message:@"Are you sure you want to delete this item?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
-    
-    [alert show];
-    
-}
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
