@@ -10,6 +10,6 @@
 
 @interface RecipeItem : UIView
 @property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *picture;
 
 @end
