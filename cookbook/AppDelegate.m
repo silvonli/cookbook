@@ -13,6 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];
+    NSData *mp3Data = [NSData dataWithContentsOfFile:path];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:mp3Data error:NULL];
+    [self.audioPlayer prepareToPlay];
+    self.audioPlayer.volume = 0.5;
+    self.audioPlayer.numberOfLoops = NSIntegerMax;
+    [self.audioPlayer play];
     return YES;
 }
 							

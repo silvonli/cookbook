@@ -10,6 +10,7 @@
 #import "RecipeItem.h"
 #import "CBDataManager.h"
 #import "RecipeViewController.h"
+#import "AppDelegate.h"
 
 #define RECIPEITEM_SPACING    36
 #define RECIPEITEM_SIZE       CGSizeMake(302, 201)
@@ -108,6 +109,21 @@
 - (IBAction)buttonOpenURL:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.haochi123.com"]];
+}
+- (IBAction)buttonMusic:(id)sender
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if (appDelegate.audioPlayer.playing == NO)
+    {
+        [appDelegate.audioPlayer play];
+    }
+    else
+    {
+        [appDelegate.audioPlayer stop];
+    }
+}
+- (IBAction)buttonTimer:(id)sender
+{
 }
 
 //////////////////////////////////////////////////////////////

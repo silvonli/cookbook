@@ -35,6 +35,14 @@
 		B51617AC16AE704300099ED3 /* Item_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B51617A216AE704300099ED3 /* Item_bg.png */; };
 		B51617AF16AE71EA00099ED3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51617AE16AE71EA00099ED3 /* QuartzCore.framework */; };
 		B51617B116AE825B00099ED3 /* 分类_背景.png in Resources */ = {isa = PBXBuildFile; fileRef = B51617B016AE825B00099ED3 /* 分类_背景.png */; };
+		B593BE5516B20FB1007D5702 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B593BE5416B20FB1007D5702 /* CoreText.framework */; };
+		B593BEA616B23880007D5702 /* NSAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B593BE9F16B23880007D5702 /* NSAttributedString+Attributes.m */; };
+		B593BEA716B23880007D5702 /* NSTextCheckingResult+ExtendedURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B593BEA116B23880007D5702 /* NSTextCheckingResult+ExtendedURL.m */; };
+		B593BEA816B23880007D5702 /* OHAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B593BEA316B23880007D5702 /* OHAttributedLabel.m */; };
+		B593BEA916B23880007D5702 /* OHParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B593BEA516B23880007D5702 /* OHParagraphStyle.m */; };
+		B593BEAC16B238E5007D5702 /* CoreTextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B593BEAB16B238E5007D5702 /* CoreTextUtils.m */; };
+		B593BEBE16B2B48B007D5702 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B593BEBD16B2B48B007D5702 /* music.mp3 */; };
+		B593BEC016B2B512007D5702 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B593BEBF16B2B511007D5702 /* AVFoundation.framework */; };
 		B5BD07C416AF190B009C23F2 /* 分类_123美食网.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C216AF190B009C23F2 /* 分类_123美食网.png */; };
 		B5BD07C516AF190B009C23F2 /* 分类_家常菜谱.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C316AF190B009C23F2 /* 分类_家常菜谱.png */; };
 		B5BD07CA16AF254A009C23F2 /* 分类_表.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07C716AF254A009C23F2 /* 分类_表.png */; };
@@ -90,6 +98,11 @@
 		B5BD082D16AF46AB009C23F2 /* 麻婆豆腐.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5BD07FE16AF46AB009C23F2 /* 麻婆豆腐.jpg */; };
 		B5BD083A16AF9188009C23F2 /* CBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BD083916AF9188009C23F2 /* CBDataManager.m */; };
 		B5BD083C16AF9295009C23F2 /* 鱼香肉丝.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5BD083B16AF9295009C23F2 /* 鱼香肉丝.jpg */; };
+		B5BD084C16B10397009C23F2 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BD084B16B10397009C23F2 /* RecipeViewController.m */; };
+		B5BD085116B10FCB009C23F2 /* 菜谱_背景.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD084D16B10FCB009C23F2 /* 菜谱_背景.png */; };
+		B5BD085216B10FCB009C23F2 /* 菜谱_返回.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD084E16B10FCB009C23F2 /* 菜谱_返回.png */; };
+		B5BD085316B10FCB009C23F2 /* 菜谱_画框.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD084F16B10FCB009C23F2 /* 菜谱_画框.png */; };
+		B5BD085416B10FCB009C23F2 /* 菜谱_计时.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD085016B10FCB009C23F2 /* 菜谱_计时.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +147,19 @@
 		B51617A216AE704300099ED3 /* Item_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_bg.png; sourceTree = "<group>"; };
 		B51617AE16AE71EA00099ED3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B51617B016AE825B00099ED3 /* 分类_背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_背景.png"; sourceTree = "<group>"; };
+		B593BE5416B20FB1007D5702 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B593BE9E16B23880007D5702 /* NSAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Attributes.h"; sourceTree = "<group>"; };
+		B593BE9F16B23880007D5702 /* NSAttributedString+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Attributes.m"; sourceTree = "<group>"; };
+		B593BEA016B23880007D5702 /* NSTextCheckingResult+ExtendedURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextCheckingResult+ExtendedURL.h"; sourceTree = "<group>"; };
+		B593BEA116B23880007D5702 /* NSTextCheckingResult+ExtendedURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextCheckingResult+ExtendedURL.m"; sourceTree = "<group>"; };
+		B593BEA216B23880007D5702 /* OHAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHAttributedLabel.h; sourceTree = "<group>"; };
+		B593BEA316B23880007D5702 /* OHAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHAttributedLabel.m; sourceTree = "<group>"; };
+		B593BEA416B23880007D5702 /* OHParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHParagraphStyle.h; sourceTree = "<group>"; };
+		B593BEA516B23880007D5702 /* OHParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHParagraphStyle.m; sourceTree = "<group>"; };
+		B593BEAA16B238E5007D5702 /* CoreTextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextUtils.h; sourceTree = "<group>"; };
+		B593BEAB16B238E5007D5702 /* CoreTextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextUtils.m; sourceTree = "<group>"; };
+		B593BEBD16B2B48B007D5702 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		B593BEBF16B2B511007D5702 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B5BD07C216AF190B009C23F2 /* 分类_123美食网.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_123美食网.png"; sourceTree = "<group>"; };
 		B5BD07C316AF190B009C23F2 /* 分类_家常菜谱.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_家常菜谱.png"; sourceTree = "<group>"; };
 		B5BD07C716AF254A009C23F2 /* 分类_表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类_表.png"; sourceTree = "<group>"; };
@@ -190,6 +216,12 @@
 		B5BD083816AF9188009C23F2 /* CBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDataManager.h; sourceTree = "<group>"; };
 		B5BD083916AF9188009C23F2 /* CBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDataManager.m; sourceTree = "<group>"; };
 		B5BD083B16AF9295009C23F2 /* 鱼香肉丝.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "鱼香肉丝.jpg"; sourceTree = "<group>"; };
+		B5BD084A16B10397009C23F2 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		B5BD084B16B10397009C23F2 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		B5BD084D16B10FCB009C23F2 /* 菜谱_背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "菜谱_背景.png"; sourceTree = "<group>"; };
+		B5BD084E16B10FCB009C23F2 /* 菜谱_返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "菜谱_返回.png"; sourceTree = "<group>"; };
+		B5BD084F16B10FCB009C23F2 /* 菜谱_画框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "菜谱_画框.png"; sourceTree = "<group>"; };
+		B5BD085016B10FCB009C23F2 /* 菜谱_计时.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "菜谱_计时.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +229,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B593BEC016B2B512007D5702 /* AVFoundation.framework in Frameworks */,
+				B593BE5516B20FB1007D5702 /* CoreText.framework in Frameworks */,
 				B51617AF16AE71EA00099ED3 /* QuartzCore.framework in Frameworks */,
 				B516176A16AE6E7200099ED3 /* UIKit.framework in Frameworks */,
 				B516176C16AE6E7200099ED3 /* Foundation.framework in Frameworks */,
@@ -227,6 +261,8 @@
 		B516176816AE6E7200099ED3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B593BEBF16B2B511007D5702 /* AVFoundation.framework */,
+				B593BE5416B20FB1007D5702 /* CoreText.framework */,
 				B51617AE16AE71EA00099ED3 /* QuartzCore.framework */,
 				B516176916AE6E7200099ED3 /* UIKit.framework */,
 				B516176B16AE6E7200099ED3 /* Foundation.framework */,
@@ -238,6 +274,7 @@
 		B516176F16AE6E7200099ED3 /* cookbook */ = {
 			isa = PBXGroup;
 			children = (
+				B593BE9D16B23880007D5702 /* OHAttributedLabel */,
 				B516179016AE704300099ED3 /* GMGridView */,
 				B516179D16AE704300099ED3 /* RecipeItem.h */,
 				B516179E16AE704300099ED3 /* RecipeItem.m */,
@@ -248,6 +285,8 @@
 				B516178116AE6E7200099ED3 /* MainStoryboard.storyboard */,
 				B516178416AE6E7200099ED3 /* ViewController.h */,
 				B516178516AE6E7200099ED3 /* ViewController.m */,
+				B5BD084A16B10397009C23F2 /* RecipeViewController.h */,
+				B5BD084B16B10397009C23F2 /* RecipeViewController.m */,
 				B5BD083816AF9188009C23F2 /* CBDataManager.h */,
 				B5BD083916AF9188009C23F2 /* CBDataManager.m */,
 				B516177016AE6E7200099ED3 /* Supporting Files */,
@@ -290,6 +329,10 @@
 			isa = PBXGroup;
 			children = (
 				B5BD07CF16AF46AB009C23F2 /* Picture */,
+				B5BD084D16B10FCB009C23F2 /* 菜谱_背景.png */,
+				B5BD084E16B10FCB009C23F2 /* 菜谱_返回.png */,
+				B5BD084F16B10FCB009C23F2 /* 菜谱_画框.png */,
+				B5BD085016B10FCB009C23F2 /* 菜谱_计时.png */,
 				B5BD07C716AF254A009C23F2 /* 分类_表.png */,
 				B5BD07C816AF254A009C23F2 /* 分类_更多.png */,
 				B5BD07C916AF254A009C23F2 /* 分类_咖啡.png */,
@@ -304,11 +347,29 @@
 				B50C115F16AE8E1600F48291 /* 分类_鱼虾.png */,
 				B50C116016AE8E1600F48291 /* 分类_猪肉.png */,
 				B51617B016AE825B00099ED3 /* 分类_背景.png */,
+				B593BEBD16B2B48B007D5702 /* music.mp3 */,
 				B51617A116AE704300099ED3 /* bg.png */,
 				B51617A216AE704300099ED3 /* Item_bg.png */,
 				B5BD07CD16AF3632009C23F2 /* data.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		B593BE9D16B23880007D5702 /* OHAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B593BEAA16B238E5007D5702 /* CoreTextUtils.h */,
+				B593BEAB16B238E5007D5702 /* CoreTextUtils.m */,
+				B593BE9E16B23880007D5702 /* NSAttributedString+Attributes.h */,
+				B593BE9F16B23880007D5702 /* NSAttributedString+Attributes.m */,
+				B593BEA016B23880007D5702 /* NSTextCheckingResult+ExtendedURL.h */,
+				B593BEA116B23880007D5702 /* NSTextCheckingResult+ExtendedURL.m */,
+				B593BEA216B23880007D5702 /* OHAttributedLabel.h */,
+				B593BEA316B23880007D5702 /* OHAttributedLabel.m */,
+				B593BEA416B23880007D5702 /* OHParagraphStyle.h */,
+				B593BEA516B23880007D5702 /* OHParagraphStyle.m */,
+			);
+			path = OHAttributedLabel;
 			sourceTree = "<group>";
 		};
 		B5BD07CF16AF46AB009C23F2 /* Picture */ = {
@@ -486,6 +547,11 @@
 				B5BD082C16AF46AB009C23F2 /* 鸡蛋羹.jpg in Resources */,
 				B5BD082D16AF46AB009C23F2 /* 麻婆豆腐.jpg in Resources */,
 				B5BD083C16AF9295009C23F2 /* 鱼香肉丝.jpg in Resources */,
+				B5BD085116B10FCB009C23F2 /* 菜谱_背景.png in Resources */,
+				B5BD085216B10FCB009C23F2 /* 菜谱_返回.png in Resources */,
+				B5BD085316B10FCB009C23F2 /* 菜谱_画框.png in Resources */,
+				B5BD085416B10FCB009C23F2 /* 菜谱_计时.png in Resources */,
+				B593BEBE16B2B48B007D5702 /* music.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +572,12 @@
 				B51617A816AE704300099ED3 /* UIView+GMGridViewAdditions.m in Sources */,
 				B51617A916AE704300099ED3 /* RecipeItem.m in Sources */,
 				B5BD083A16AF9188009C23F2 /* CBDataManager.m in Sources */,
+				B5BD084C16B10397009C23F2 /* RecipeViewController.m in Sources */,
+				B593BEA616B23880007D5702 /* NSAttributedString+Attributes.m in Sources */,
+				B593BEA716B23880007D5702 /* NSTextCheckingResult+ExtendedURL.m in Sources */,
+				B593BEA816B23880007D5702 /* OHAttributedLabel.m in Sources */,
+				B593BEA916B23880007D5702 /* OHParagraphStyle.m in Sources */,
+				B593BEAC16B238E5007D5702 /* CoreTextUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +640,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: yu wang (98D984K3E5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -576,6 +649,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "282906B1-F66F-49E6-A50F-31F9BEC5D07C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;

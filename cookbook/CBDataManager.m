@@ -9,11 +9,9 @@
 #import "CBDataManager.h"
 #import <CoreText/CoreText.h>
 
-// 标题字体、字号、段间距
-#define TEXT_FONT_NAME               @"STHeitiSC-Light"
-#define TEXT_FONT_SIZE               34
-#define TEXT_PARAGRAPH_SPACING       20.0
-#define TEXT_PARAGRAPH_SPACINGBEFORE 0.0
+// 字体、行间距
+#define TEXT_LINE_SPACING  0
+#define CREATE_FONT CTFontCreateWithName((CFStringRef)@"STHeitiSC-Light", 25, NULL)
 
 @interface CBDataManager ()
 
@@ -79,53 +77,63 @@ static NSArray *recipes;
 }
 - (NSAttributedString *)getRecipeIngredients:(NSString *)name
 {
-    NSMutableAttributedString* str = [[NSMutableAttributedString alloc] initWithString:[[self getRecipe:name] valueForKey:@"ingredients"]];
-    // font
-    CTFontRef ctFont = CTFontCreateWithName((CFStringRef)TEXT_FONT_NAME, TEXT_FONT_SIZE, NULL);
-    [str addAttribute: (NSString *)kCTFontAttributeName
-                     value: (__bridge id)ctFont
-                     range: NSMakeRange(0, [str length])];
-    CFRelease(ctFont);
-    // 对齐
-    CTTextAlignment alignment = kCTTextAlignmentLeft;
-    CGFloat floatValue = TEXT_PARAGRAPH_SPACING;
-    CGFloat fSpaceBefore = TEXT_PARAGRAPH_SPACINGBEFORE;
-    CTParagraphStyleSetting paraStyles[3] =
+    NSMutableAttributedString *attStr = [self genAttributedTitle:@"主料："];
+    NSString * text = [[self getRecipe:name] valueForKey:@"ingredients"];
+    [attStr appendAttributedString:[self genAttributedText:text]];
+    return attStr;
+}
+- (NSAttributedString *)getRecipeSeasoning:(NSString *)name
+{
+    NSMutableAttributedString *attStr = [self genAttributedTitle:@"调料："];
+    NSString *text = [[self getRecipe:name] valueForKey:@"seasoning"];
+    [attStr appendAttributedString:[self genAttributedText:text]];
+    return attStr;
+}
+- (NSAttributedString *)getRecipeOpration:(NSString *)name
+{
+    NSMutableAttributedString *attStr = [self genAttributedTitle:@"操作：\n"];
+    NSString *text = [[self getRecipe:name] valueForKey:@"opration"];
+    [attStr appendAttributedString:[self genAttributedText:text]];
+    return attStr;
+}
+- (NSAttributedString *)getRecipeTips:(NSString *)name
+{
+    NSString *text = [[self getRecipe:name] valueForKey:@"tips"];
+    if (text.length == 0)
     {
-        {
-            .spec = kCTParagraphStyleSpecifierAlignment,
-            .valueSize = sizeof(CTTextAlignment),
-            .value = &alignment
-        },
-        {
-            .spec = kCTParagraphStyleSpecifierParagraphSpacing,
-            .valueSize = sizeof(CGFloat),
-            .value = &floatValue
-        },
-        {
-            .spec = kCTParagraphStyleSpecifierParagraphSpacingBefore,
-            .valueSize = sizeof(CGFloat),
-            .value = &fSpaceBefore
-        },
-    };
-    CTParagraphStyleRef aStyle = CTParagraphStyleCreate((const CTParagraphStyleSetting*) &paraStyles, 3);
-    [str addAttribute: (NSString*)kCTParagraphStyleAttributeName
-                     value: (__bridge id)aStyle
-                     range: NSMakeRange(0, [str length])];
-    CFRelease(aStyle);
+        return nil;
+    }
     
-    return str;
+    NSMutableAttributedString *attStr = [self genAttributedTitle:@"贴士：\n"];
+    [attStr appendAttributedString:[self genAttributedText:text]];
+    return attStr;
 }
-- (NSString *)getRecipeSeasoning:(NSString *)name
+
+
+- (NSMutableAttributedString *) genAttributedTitle:(NSString *) title
 {
-    return [[self getRecipe:name] valueForKey:@"seasoning"];
+    NSMutableAttributedString* attTitle = [[NSMutableAttributedString alloc] initWithString:title];
+    CTFontRef font = CREATE_FONT;
+    [attTitle addAttribute: (NSString *)kCTFontAttributeName
+                   value: (__bridge id)font
+                   range: NSMakeRange(0, [attTitle length])];
+    CFRelease(font);
+    
+    //CGColorRef titleColor = ;
+    [attTitle addAttribute:(NSString *)kCTForegroundColorAttributeName
+                     value:(id)[[UIColor colorWithRed:160.0f/255.0f green:0.0f blue:0.0f alpha:1.0f] CGColor]
+                     range:NSMakeRange(0, [attTitle length])];
+    return attTitle;
 }
-- (NSString *)getRecipeOpration:(NSString *)name
+
+- (NSAttributedString *) genAttributedText:(NSString *) text
 {
-    return [[self getRecipe:name] valueForKey:@"opration"];
-}
-- (NSString *)getRecipeTips:(NSString *)name
-{
-    return [[self getRecipe:name] valueForKey:@"tips"];
+    NSMutableAttributedString* attText = [[NSMutableAttributedString alloc] initWithString:text];
+    CTFontRef font = CREATE_FONT;
+    [attText addAttribute: (NSString *)kCTFontAttributeName
+                   value: (__bridge id)font
+                   range: NSMakeRange(0, [attText length])];
+    CFRelease(font);
+    return attText;
 }
 @end

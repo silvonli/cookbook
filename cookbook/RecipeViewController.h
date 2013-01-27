@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecipeViewController : UIViewController
+@interface RecipeViewController : UIViewController<UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *picture;
-@property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property(nonatomic, strong) UIScrollView * scrollView;
+@property(nonatomic, strong) UIPageControl *pageControl;
 @property (strong, nonatomic) NSString *name;
 @end
