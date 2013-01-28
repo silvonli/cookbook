@@ -12,10 +12,10 @@
 #import "RecipeViewController.h"
 #import "AppDelegate.h"
 
-#define RECIPEITEM_SPACING    36
-#define RECIPEITEM_SIZE       CGSizeMake(302, 201)
-#define RECIPEITEM_EDGE_TOP   0
-#define RECIPEITEM_EDGE_LEFT  28
+#define RECIPEITEM_SPACING          36
+#define RECIPEITEM_SIZE             CGSizeMake(302, 201)
+#define RECIPEITEM_EDGE_TOPBOTTOM   36
+#define RECIPEITEM_EDGE_LEFT        28
 
 
 @interface ViewController ()<GMGridViewDataSource, GMGridViewActionDelegate>
@@ -39,11 +39,10 @@
     
     self.recipeItemView.style = GMGridViewStyleSwap;
     self.recipeItemView.itemSpacing = RECIPEITEM_SPACING;
-    self.recipeItemView.minEdgeInsets = UIEdgeInsetsMake(RECIPEITEM_EDGE_TOP, RECIPEITEM_EDGE_LEFT, 0, 0);
+    self.recipeItemView.minEdgeInsets = UIEdgeInsetsMake(RECIPEITEM_EDGE_TOPBOTTOM, RECIPEITEM_EDGE_LEFT, RECIPEITEM_EDGE_TOPBOTTOM, 0);
     self.recipeItemView.actionDelegate = self;
     self.recipeItemView.dataSource = self;
     self.recipeItemView.centerGrid = NO;
-    //self.recipeItemView.pagingEnabled = YES;
     self.recipeItemView.clipsToBounds = YES;
     self.recipeItemView.backgroundColor = [UIColor clearColor];
 
@@ -169,7 +168,7 @@
 
 - (void)GMGridView:(GMGridView *)gridView didTapOnItemAtIndex:(NSInteger)position
 {
-    RecipeViewController * rvc = [self.storyboard instantiateViewControllerWithIdentifier:@"RVCIdentifier"];
+    RecipeViewController * rvc = [[RecipeViewController alloc] initWithNibName:nil bundle:nil];
     rvc.name = self.currentData[position];
     [self presentViewController:rvc animated:NO completion:nil];
 }

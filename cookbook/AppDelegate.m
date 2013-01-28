@@ -13,6 +13,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // 启动画面动画
+    self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 1024, 768)];
+    self.splashView.image = [UIImage imageNamed:@"Default-Landscape.png"];
+    [self.window.rootViewController.view addSubview:self.splashView];
+    [self.window.rootViewController.view bringSubviewToFront:self.splashView];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration: 1];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
+    self.splashView.alpha = 0.0;
+    [UIView commitAnimations];
+    
+    // mp3
     NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];
     NSData *mp3Data = [NSData dataWithContentsOfFile:path];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithData:mp3Data error:NULL];
@@ -22,7 +36,12 @@
     [self.audioPlayer play];
     return YES;
 }
-							
+
+- (void)startupAnimationDone:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
+{
+	[self.splashView removeFromSuperview];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

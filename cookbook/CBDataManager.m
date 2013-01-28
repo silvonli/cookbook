@@ -10,9 +10,9 @@
 #import <CoreText/CoreText.h>
 
 // 字体、行间距
-#define TEXT_LINE_SPACING  0
-#define CREATE_FONT CTFontCreateWithName((CFStringRef)@"STHeitiSC-Light", 25, NULL)
-
+#define TEXT_LINE_SPACING   10
+#define CREATE_FONT         CTFontCreateWithName((CFStringRef)@"STHeitiSC-Light", 25, NULL)
+#define TITLE_COLOR         [UIColor colorWithRed:160.0f/255.0f green:0.0f blue:0.0f alpha:1.0f]
 @interface CBDataManager ()
 
 - (NSDictionary *)getRecipe:(NSString *)name;
@@ -119,10 +119,31 @@ static NSArray *recipes;
                    range: NSMakeRange(0, [attTitle length])];
     CFRelease(font);
     
-    //CGColorRef titleColor = ;
     [attTitle addAttribute:(NSString *)kCTForegroundColorAttributeName
-                     value:(id)[[UIColor colorWithRed:160.0f/255.0f green:0.0f blue:0.0f alpha:1.0f] CGColor]
+                     value:(id)[TITLE_COLOR CGColor]
                      range:NSMakeRange(0, [attTitle length])];
+    
+    // 行间距
+    CGFloat floatValue = TEXT_LINE_SPACING;
+    CTParagraphStyleSetting paraStyles[2] =
+    {
+        {
+            .spec = kCTParagraphStyleSpecifierMaximumLineSpacing,
+            .valueSize = sizeof(CGFloat),
+            .value = &floatValue
+        },
+        {
+            .spec = kCTParagraphStyleSpecifierMinimumLineSpacing,
+            .valueSize = sizeof(CGFloat),
+            .value = &floatValue
+        },
+    };
+    CTParagraphStyleRef aStyle = CTParagraphStyleCreate((const CTParagraphStyleSetting*) &paraStyles, 2);
+    [attTitle addAttribute: (NSString*)kCTParagraphStyleAttributeName
+                    value: (__bridge id)aStyle
+                    range: NSMakeRange(0, [attTitle length])];
+    CFRelease(aStyle);
+
     return attTitle;
 }
 
@@ -134,6 +155,28 @@ static NSArray *recipes;
                    value: (__bridge id)font
                    range: NSMakeRange(0, [attText length])];
     CFRelease(font);
+    
+    // 行间距
+    CGFloat floatValue = TEXT_LINE_SPACING;
+    CTParagraphStyleSetting paraStyles[2] =
+    {
+        {
+            .spec = kCTParagraphStyleSpecifierMaximumLineSpacing,
+            .valueSize = sizeof(CGFloat),
+            .value = &floatValue
+        },
+        {
+            .spec = kCTParagraphStyleSpecifierMinimumLineSpacing,
+            .valueSize = sizeof(CGFloat),
+            .value = &floatValue
+        },
+    };
+    CTParagraphStyleRef aStyle = CTParagraphStyleCreate((const CTParagraphStyleSetting*) &paraStyles, 2);
+    [attText addAttribute: (NSString*)kCTParagraphStyleAttributeName
+                           value: (__bridge id)aStyle
+                           range: NSMakeRange(0, [attText length])];
+    CFRelease(aStyle);
+    
     return attText;
 }
 @end

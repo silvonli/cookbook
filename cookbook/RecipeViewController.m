@@ -13,6 +13,7 @@
 #define EDGE_SPACING        40
 #define SEC_SPACING         18
 #define INEDGE_SPACING      20
+#define BUTTON_SPACING      200
 
 #define HK_FRAME            CGRectMake(618, 40, 366, 176)
 #define NAME_FRAME          CGRectMake(40,  40, 500, 50)
@@ -31,27 +32,42 @@
     }
     return self;
 }
-- (IBAction)buttonReturn:(id)sender
-{
-    [self dismissViewControllerAnimated:NO completion:nil];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    UIEdgeInsets inset = UIEdgeInsetsMake(0, 0, 80, 0);
-    CGRect scrollFrame = UIEdgeInsetsInsetRect(self.view.frame, inset);
+    UIImage *image = [UIImage imageNamed:@"菜谱_背景.png"];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:scrollFrame];
+    // 按钮
+    UIButton *btnRet = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnRet.frame = CGRectMake(900.f, 704.0f, 100, 40);
+    [btnRet setBackgroundImage:[UIImage imageNamed:@"菜谱_返回.png"] forState:UIControlStateNormal];
+    [btnRet addTarget:self action:@selector(buttonReturn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnRet];
+    
+    UIButton *btnTimer = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnTimer.frame = CGRectMake(901.f, 573.0f, 68, 111);
+    [btnTimer setBackgroundImage:[UIImage imageNamed:@"分类_表.png"] forState:UIControlStateNormal];
+    [btnTimer addTarget:self action:@selector(buttonTimer:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnTimer];
+    
+    UIButton *btnMusic = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnMusic.frame = CGRectMake(874.f, 445.0f, 122, 108);
+    [btnMusic setBackgroundImage:[UIImage imageNamed:@"分类_咖啡.png"] forState:UIControlStateNormal];
+    [btnMusic addTarget:self action:@selector(buttonMusic:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnMusic];
+
+    // 滚动视
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
     self.scrollView.delegate = self;
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:self.scrollView];
+    [self.view sendSubviewToBack:self.scrollView];
     
-    UIImage *image = [UIImage imageNamed:@"菜谱_背景.png"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-   
+        
     // 图片
     UIImageView *hk = [[UIImageView alloc] initWithFrame:HK_FRAME];
     hk.autoresizingMask = UIViewAutoresizingNone;
@@ -75,7 +91,7 @@
     
     CGRect hkRect    = hk.frame;
     CGRect nameRect  = labelName.frame;
-    CGFloat widthFull  = 1024 - EDGE_SPACING - EDGE_SPACING;
+    CGFloat widthFull  = 1024 - EDGE_SPACING - EDGE_SPACING - BUTTON_SPACING;
     CGFloat widthNOPic = hkRect.origin.x - INEDGE_SPACING - nameRect.origin.x;
     
     CGRect  baseRect;
@@ -137,6 +153,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
+}
+- (IBAction)buttonReturn:(id)sender
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 - (IBAction)buttonMusic:(id)sender
 {

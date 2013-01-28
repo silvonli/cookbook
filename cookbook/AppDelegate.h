@@ -13,4 +13,5 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) UIImageView  *splashView;
 @end
