@@ -26,6 +26,14 @@
     self.splashView.alpha = 0.0;
     [UIView commitAnimations];
     
+    // musice
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];
+    NSData *mp3Data = [NSData dataWithContentsOfFile:path];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:mp3Data error:NULL];
+    self.audioPlayer.volume = 0.5;
+    self.audioPlayer.numberOfLoops = NSIntegerMax;
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
     return YES;
 }
 

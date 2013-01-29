@@ -12,13 +12,14 @@
 #import "RecipeViewController.h"
 #import "AppDelegate.h"
 
-
+// grid控件位置
 #define RECIPEGRID_FRAME                 CGRectMake(320, 0,  784, 768)
 #define RECIPEGRID_EDGE_TOPBOTTOM        36
 #define RECIPEGRID_EDGE_LEFTRIGHT        28
 #define RECIPEGRID_ITEM_SPACING          36
 #define RECIPEGRID_ITEM_SIZE             CGSizeMake(302, 201)
 
+// 按钮位置
 #define RECT_CATEGORYBG                  CGRectMake(26,168, 267, 432)
 #define RECT_TITLEIMG                    CGRectMake(90,217, 138, 33)
 #define RECT_MOREBUTTON                  CGRectMake(155, 14, 154, 174)
@@ -26,6 +27,7 @@
 #define RECT_TIMERBUTTON                 CGRectMake(181,619, 95, 154)
 #define RECT_URLBUTTON                   CGRectMake(69, 505, 188,67)
 
+// 分类按钮位置
 #define CATEGORYBUTTON_SIZE              CGSizeMake(99, 44)
 #define CATEGORYBUTTON_COL1_X            61
 #define CATEGORYBUTTON_COL2_X            166
@@ -35,7 +37,7 @@
 @interface ViewController ()<GMGridViewDataSource, GMGridViewActionDelegate>
 
 @property (nonatomic, strong) NSArray *currentData;
-@property (nonatomic, weak) UIButton *currentButton;
+@property (nonatomic, weak)   UIButton *currentButton;
 @end
 
 @implementation ViewController
@@ -71,11 +73,12 @@
     [btnTimer addTarget:self action:@selector(buttonTimer:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnTimer];
     
-    UIButton *btnMusic = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnMusic.frame = RECT_MUSICBUTTON;
-    [btnMusic setBackgroundImage:[UIImage imageNamed:@"btn_coffee.png"] forState:UIControlStateNormal];
-    [btnMusic addTarget:self action:@selector(buttonMusic:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btnMusic];
+    self.btnMusic = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.btnMusic.frame = RECT_MUSICBUTTON;
+    [self.btnMusic setBackgroundImage:[UIImage imageNamed:@"btn_coffee.png"] forState:UIControlStateNormal];
+    [self.btnMusic setBackgroundImage:[UIImage imageNamed:@"btn_coffeeplay.png"] forState:UIControlStateSelected];
+    [self.btnMusic addTarget:self action:@selector(buttonMusic:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btnMusic];
     
     UIButton *btnURL = [UIButton buttonWithType:UIButtonTypeCustom];
     btnURL.frame = RECT_URLBUTTON;
@@ -113,17 +116,13 @@
     self.recipeGridView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.recipeGridView];
     
-    // musice
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];
-    NSData *mp3Data = [NSData dataWithContentsOfFile:path];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:mp3Data error:NULL];
-    self.audioPlayer.volume = 0.5;
-    self.audioPlayer.numberOfLoops = NSIntegerMax;
-    [self.audioPlayer prepareToPlay];
-    [self.audioPlayer play];
-    
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.btnMusic.selected = !appDelegate.audioPlayer.playing;
+}
 
 - (void)buttonMore:(id)sender
 {
@@ -132,14 +131,16 @@
 
 - (void)buttonMusic:(id)sender
 {
-    if (self.audioPlayer.playing == NO)
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if (appDelegate.audioPlayer.playing == NO)
     {
-        [self.audioPlayer play];
+        [appDelegate.audioPlayer play];
     }
     else
     {
-        [self.audioPlayer stop];
+        [appDelegate.audioPlayer stop];
     }
+    self.btnMusic.selected = !appDelegate.audioPlayer.playing;
 }
 - (void)buttonTimer:(id)sender
 {
@@ -157,7 +158,10 @@
     self.currentButton.selected = NO;
     self.currentButton = btn;
     self.currentButton.selected = YES;
+    
+    self.recipeGridView.contentOffset = CGPointZero;
     [self.recipeGridView reloadData];
+    
 }
 
 //////////////////////////////////////////////////////////////

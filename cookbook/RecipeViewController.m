@@ -50,16 +50,20 @@
     
     UIButton *btnTimer = [UIButton buttonWithType:UIButtonTypeCustom];
     btnTimer.frame = CGRectMake(901.f, 573.0f, 68, 111);
-    [btnTimer setBackgroundImage:[UIImage imageNamed:@"分类_表.png"] forState:UIControlStateNormal];
+    [btnTimer setBackgroundImage:[UIImage imageNamed:@"btn_timer.png"] forState:UIControlStateNormal];
     [btnTimer addTarget:self action:@selector(buttonTimer:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnTimer];
     
     UIButton *btnMusic = [UIButton buttonWithType:UIButtonTypeCustom];
     btnMusic.frame = CGRectMake(874.f, 445.0f, 122, 108);
-    [btnMusic setBackgroundImage:[UIImage imageNamed:@"分类_咖啡.png"] forState:UIControlStateNormal];
+    [btnMusic setBackgroundImage:[UIImage imageNamed:@"btn_coffee.png"] forState:UIControlStateNormal];
+    [btnMusic setBackgroundImage:[UIImage imageNamed:@"btn_coffeeplay.png"] forState:UIControlStateSelected];
     [btnMusic addTarget:self action:@selector(buttonMusic:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnMusic];
-
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    btnMusic.selected = !appDelegate.audioPlayer.playing;
+    
     // 滚动视
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
     self.scrollView.delegate = self;
@@ -158,15 +162,17 @@
 }
 - (void)buttonMusic:(id)sender
 {
-//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//    if (appDelegate.audioPlayer.playing == NO)
-//    {
-//        [appDelegate.audioPlayer play];
-//    }
-//    else
-//    {
-//        [appDelegate.audioPlayer stop];
-//    }
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if (appDelegate.audioPlayer.playing == NO)
+    {
+        [appDelegate.audioPlayer play];
+    }
+    else
+    {
+        [appDelegate.audioPlayer stop];
+    }
+    UIButton *btnMusic = sender;
+    btnMusic.selected = !appDelegate.audioPlayer.playing;
 }
 - (void)buttonTimer:(id)sender
 {

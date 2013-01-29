@@ -12,5 +12,5 @@
 
 @interface ViewController : UIViewController
 @property (strong, nonatomic) GMGridView *recipeGridView;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) UIButton *btnMusic;
 @end
