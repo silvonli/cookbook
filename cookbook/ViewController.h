@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "GMGridView.h"
+#import <AVFoundation/AVAudioPlayer.h>
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet GMGridView *recipeItemView;
+@property (strong, nonatomic) GMGridView *recipeGridView;
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @end

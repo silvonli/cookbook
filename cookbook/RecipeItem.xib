@@ -33,7 +33,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIView" id="541436134">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIImageView" id="542148959">
@@ -92,6 +92,7 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{302, 201}</string>
+				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="542148959"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -194,7 +195,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">Item_bg.png</string>
-			<string key="NS.object.0">{289, 201}</string>
+			<string key="NS.object.0">{16, 16}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>

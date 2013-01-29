@@ -83,10 +83,8 @@
     
     // 创建名字
     OHAttributedLabel *labelName = [[OHAttributedLabel alloc] initWithFrame:NAME_FRAME];
-    labelName.font = [UIFont fontWithName:@"STHeitiSC-Light" size:42.0f];
-    labelName.textColor = [UIColor colorWithRed:160.0f/255.0f green:0.0f blue:0.0f alpha:1.0f];
+    labelName.attributedText = [dataManager getNameAttStr:self.name];
     labelName.backgroundColor = [UIColor clearColor];
-    labelName.text = self.name;
     [self.scrollView addSubview:labelName];
     
     CGRect hkRect    = hk.frame;
@@ -102,7 +100,7 @@
     // 主料
     baseRect = nameRect;
     baseY    = baseRect.origin.y + baseRect.size.height + SEC_SPACING;
-    attText  = [dataManager getRecipeIngredients:self.name];
+    attText  = [dataManager getIngredientsAttStr:self.name];
     ptOrigin = CGPointMake(baseRect.origin.x, baseY);
     maxWidth = widthNOPic;
     OHAttributedLabel* labIngredients = [self createLableWithAttributeString:attText origin:ptOrigin width:maxWidth];
@@ -111,7 +109,7 @@
     // 调料
     baseRect = labIngredients.frame;
     baseY    = baseRect.origin.y + baseRect.size.height + SEC_SPACING;
-    attText  = [dataManager getRecipeSeasoning:self.name];
+    attText  = [dataManager getSeasoningAttStr:self.name];
     ptOrigin = CGPointMake(baseRect.origin.x, baseY);
     maxWidth = baseRect.origin.y + baseRect.size.height<hkRect.origin.y + hkRect.size.height ? widthNOPic : widthFull;
     OHAttributedLabel* labSeasoning = [self createLableWithAttributeString:attText origin:ptOrigin width:maxWidth];
@@ -120,7 +118,7 @@
     // 操作
     baseRect = labSeasoning.frame;
     baseY    = MAX(baseRect.origin.y + baseRect.size.height + SEC_SPACING, hkRect.origin.y + hkRect.size.height);
-    attText  = [dataManager getRecipeOpration:self.name];
+    attText  = [dataManager getOprationAttStr:self.name];
     ptOrigin = CGPointMake(baseRect.origin.x, baseY);
     maxWidth = widthFull;
     OHAttributedLabel* labOpration = [self createLableWithAttributeString:attText origin:ptOrigin width:maxWidth];
@@ -129,7 +127,7 @@
     // 贴士
     baseRect = labOpration.frame;
     baseY    = MAX(baseRect.origin.y + baseRect.size.height + SEC_SPACING, hkRect.origin.y + hkRect.size.height);
-    attText  = [dataManager getRecipeTips:self.name];
+    attText  = [dataManager getTipsAttStr:self.name];
     ptOrigin = CGPointMake(baseRect.origin.x, baseY);
     maxWidth = widthFull;
     OHAttributedLabel* labTips = [self createLableWithAttributeString:attText origin:ptOrigin width:maxWidth];
@@ -154,23 +152,23 @@
 {
     return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
-- (IBAction)buttonReturn:(id)sender
+- (void)buttonReturn:(id)sender
 {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
-- (IBAction)buttonMusic:(id)sender
+- (void)buttonMusic:(id)sender
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    if (appDelegate.audioPlayer.playing == NO)
-    {
-        [appDelegate.audioPlayer play];
-    }
-    else
-    {
-        [appDelegate.audioPlayer stop];
-    }
+//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//    if (appDelegate.audioPlayer.playing == NO)
+//    {
+//        [appDelegate.audioPlayer play];
+//    }
+//    else
+//    {
+//        [appDelegate.audioPlayer stop];
+//    }
 }
-- (IBAction)buttonTimer:(id)sender
+- (void)buttonTimer:(id)sender
 {
 }
 

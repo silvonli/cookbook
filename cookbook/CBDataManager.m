@@ -10,9 +10,9 @@
 #import <CoreText/CoreText.h>
 
 // 字体、行间距
-#define TEXT_LINE_SPACING   10
-#define CREATE_FONT         CTFontCreateWithName((CFStringRef)@"STHeitiSC-Light", 25, NULL)
-#define TITLE_COLOR         [UIColor colorWithRed:160.0f/255.0f green:0.0f blue:0.0f alpha:1.0f]
+#define TEXT_LINE_SPACING         10
+#define CREATE_FONT(size)         CTFontCreateWithName((CFStringRef)@"STHeitiSC-Light", size, NULL)
+#define TITLE_COLOR               [UIColor colorWithRed:160.0f/255.0f green:0.0f blue:0.0f alpha:1.0f]
 @interface CBDataManager ()
 
 - (NSDictionary *)getRecipe:(NSString *)name;
@@ -21,7 +21,7 @@
 
 @implementation CBDataManager
 
-static NSArray *recipes;
+static NSDictionary *data;
 
 + (CBDataManager *)sharedInstance
 {
@@ -32,16 +32,34 @@ static NSArray *recipes;
         
         // 其他初始化
         NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"plist"];
-        recipes = [[NSArray alloc] initWithContentsOfFile:path];
+        data = [[NSDictionary alloc] initWithContentsOfFile:path];
 
     });
     return sharedInstance;
 }
 
+- (NSInteger) getCategoryCount
+{
+    NSArray *categoryInfos = [data valueForKey:@"categoryInfos"];
+    return categoryInfos.count;
+}
+
+- (NSString *) getCategoryImageName:(NSInteger) index
+{
+    NSArray *categoryInfo = [data valueForKey:@"categoryInfos"];
+    return [categoryInfo[index] valueForKey:@"imageName"];
+}
+
+- (NSNumber *) getCategoryEnumValue:(NSInteger) index
+{
+    NSArray *categoryInfo = [data valueForKey:@"categoryInfos"];
+    return [categoryInfo[index] valueForKey:@"categoryEnumValue"];
+}
+
 - (NSDictionary *)getRecipe:(NSString *)name
 {
     NSDictionary * recipe =  nil;
-    for (NSDictionary *obj in recipes)
+    for (NSDictionary *obj in [data valueForKey:@"recipes"])
     {
         if ([name isEqual:[obj valueForKey:@"name"]])
         {
@@ -55,10 +73,10 @@ static NSArray *recipes;
 - (NSArray *)getRecipesNameOfCategory:(CBRecipeCategory)category
 {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
-    for (NSDictionary *obj in recipes)
+    for (NSDictionary *obj in [data valueForKey:@"recipes"])
     {
-        NSNumber *num = [obj valueForKey:@"category"];
-        if ([num integerValue] & category)
+        NSNumber *mask = [obj valueForKey:@"categoryMask"];
+        if ([mask integerValue] & category)
         {
             [arr addObject:[obj valueForKey:@"name" ]];
         }
@@ -70,35 +88,46 @@ static NSArray *recipes;
 {
     return [[self getRecipe:name] valueForKey:@"picture"];
 }
-- (CBRecipeCategory)getRecipeCategory:(NSString *)name
+
+- (NSAttributedString *)getNameAttStr:(NSString *)recipeName
 {
-    NSNumber* num = [[self getRecipe:name] valueForKey:@"category"];
-    return [num integerValue];
+    NSMutableAttributedString* att = [[NSMutableAttributedString alloc] initWithString:recipeName];
+    CTFontRef font = CREATE_FONT(42);
+    [att addAttribute: (NSString *)kCTFontAttributeName
+                     value: (__bridge id)font
+                     range: NSMakeRange(0, [att length])];
+    CFRelease(font);
+    
+    [att addAttribute:(NSString *)kCTForegroundColorAttributeName
+                     value:(id)[TITLE_COLOR CGColor]
+                     range:NSMakeRange(0, [att length])];
+    return att;
+    
 }
-- (NSAttributedString *)getRecipeIngredients:(NSString *)name
+- (NSAttributedString *)getIngredientsAttStr:(NSString *)recipeName
 {
     NSMutableAttributedString *attStr = [self genAttributedTitle:@"主料："];
-    NSString * text = [[self getRecipe:name] valueForKey:@"ingredients"];
+    NSString * text = [[self getRecipe:recipeName] valueForKey:@"ingredients"];
     [attStr appendAttributedString:[self genAttributedText:text]];
     return attStr;
 }
-- (NSAttributedString *)getRecipeSeasoning:(NSString *)name
+- (NSAttributedString *)getSeasoningAttStr:(NSString *)recipeName
 {
     NSMutableAttributedString *attStr = [self genAttributedTitle:@"调料："];
-    NSString *text = [[self getRecipe:name] valueForKey:@"seasoning"];
+    NSString *text = [[self getRecipe:recipeName] valueForKey:@"seasoning"];
     [attStr appendAttributedString:[self genAttributedText:text]];
     return attStr;
 }
-- (NSAttributedString *)getRecipeOpration:(NSString *)name
+- (NSAttributedString *)getOprationAttStr:(NSString *)recipeName
 {
     NSMutableAttributedString *attStr = [self genAttributedTitle:@"操作：\n"];
-    NSString *text = [[self getRecipe:name] valueForKey:@"opration"];
+    NSString *text = [[self getRecipe:recipeName] valueForKey:@"opration"];
     [attStr appendAttributedString:[self genAttributedText:text]];
     return attStr;
 }
-- (NSAttributedString *)getRecipeTips:(NSString *)name
+- (NSAttributedString *)getTipsAttStr:(NSString *)recipeName
 {
-    NSString *text = [[self getRecipe:name] valueForKey:@"tips"];
+    NSString *text = [[self getRecipe:recipeName] valueForKey:@"tips"];
     if (text.length == 0)
     {
         return nil;
@@ -113,7 +142,7 @@ static NSArray *recipes;
 - (NSMutableAttributedString *) genAttributedTitle:(NSString *) title
 {
     NSMutableAttributedString* attTitle = [[NSMutableAttributedString alloc] initWithString:title];
-    CTFontRef font = CREATE_FONT;
+    CTFontRef font = CREATE_FONT(25);
     [attTitle addAttribute: (NSString *)kCTFontAttributeName
                    value: (__bridge id)font
                    range: NSMakeRange(0, [attTitle length])];
@@ -150,7 +179,7 @@ static NSArray *recipes;
 - (NSAttributedString *) genAttributedText:(NSString *) text
 {
     NSMutableAttributedString* attText = [[NSMutableAttributedString alloc] initWithString:text];
-    CTFontRef font = CREATE_FONT;
+    CTFontRef font = CREATE_FONT(25);
     [attText addAttribute: (NSString *)kCTFontAttributeName
                    value: (__bridge id)font
                    range: NSMakeRange(0, [attText length])];

@@ -12,11 +12,25 @@
 #import "RecipeViewController.h"
 #import "AppDelegate.h"
 
-#define RECIPEITEM_SPACING          36
-#define RECIPEITEM_SIZE             CGSizeMake(302, 201)
-#define RECIPEITEM_EDGE_TOPBOTTOM   36
-#define RECIPEITEM_EDGE_LEFT        28
 
+#define RECIPEGRID_FRAME                 CGRectMake(320, 0,  784, 768)
+#define RECIPEGRID_EDGE_TOPBOTTOM        36
+#define RECIPEGRID_EDGE_LEFTRIGHT        28
+#define RECIPEGRID_ITEM_SPACING          36
+#define RECIPEGRID_ITEM_SIZE             CGSizeMake(302, 201)
+
+#define RECT_CATEGORYBG                  CGRectMake(26,168, 267, 432)
+#define RECT_TITLEIMG                    CGRectMake(90,217, 138, 33)
+#define RECT_MOREBUTTON                  CGRectMake(155, 14, 154, 174)
+#define RECT_MUSICBUTTON                 CGRectMake(9, 615, 170, 150)
+#define RECT_TIMERBUTTON                 CGRectMake(181,619, 95, 154)
+#define RECT_URLBUTTON                   CGRectMake(69, 505, 188,67)
+
+#define CATEGORYBUTTON_SIZE              CGSizeMake(99, 44)
+#define CATEGORYBUTTON_COL1_X            61
+#define CATEGORYBUTTON_COL2_X            166
+#define CATEGORYBUTTON_INIT_Y            284
+#define CATEGORYBUTTON_V_SPACING         13
 
 @interface ViewController ()<GMGridViewDataSource, GMGridViewActionDelegate>
 
@@ -31,98 +45,119 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryAll];
-    self.currentButton = (UIButton*)[self.view viewWithTag:100];
+    // 背景
+    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bg.png"]];
+    // 图片
+    UIImageView *categoryBG = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_category.png"]];
+    categoryBG.frame = RECT_CATEGORYBG;
+    categoryBG.contentMode = UIViewContentModeCenter;
+    [self.view addSubview:categoryBG];
     
-    UIImage *image = [UIImage imageNamed:@"bg.png"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    UIImageView *titleImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"btn_title.png"]];
+    titleImg.frame = RECT_TITLEIMG;
+    titleImg.contentMode = UIViewContentModeCenter;
+    [self.view addSubview:titleImg];
     
-    self.recipeItemView.style = GMGridViewStyleSwap;
-    self.recipeItemView.itemSpacing = RECIPEITEM_SPACING;
-    self.recipeItemView.minEdgeInsets = UIEdgeInsetsMake(RECIPEITEM_EDGE_TOPBOTTOM, RECIPEITEM_EDGE_LEFT, RECIPEITEM_EDGE_TOPBOTTOM, 0);
-    self.recipeItemView.actionDelegate = self;
-    self.recipeItemView.dataSource = self;
-    self.recipeItemView.centerGrid = NO;
-    self.recipeItemView.clipsToBounds = YES;
-    self.recipeItemView.backgroundColor = [UIColor clearColor];
-
-}
-
-- (IBAction)buttonAll:(id)sender
-{    
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryAll];
-    self.currentButton.selected = NO;
-    self.currentButton = sender;
-    self.currentButton.selected = YES;
-    [self.recipeItemView reloadData];
-}
-- (IBAction)buttonSuChai:(id)sender
-{ 
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryShuCai];
-    self.currentButton.selected = NO;
-    self.currentButton = sender;
-    self.currentButton.selected = YES;
-    [self.recipeItemView reloadData]; 
-}
-- (IBAction)buttonPaiGu:(id)sender
-{
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryPaiGu];
-    self.currentButton.selected = NO;
-    self.currentButton = sender;
-    self.currentButton.selected = YES;
-    [self.recipeItemView reloadData];
-}
-- (IBAction)buttonZhuRou:(id)sender
-{
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryZhuRou];
-    self.currentButton.selected = NO;
-    self.currentButton = sender;
-    self.currentButton.selected = YES;
-    [self.recipeItemView reloadData];
-}
-- (IBAction)buttonJiRou:(id)sender
-{
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryJiRou];
-    self.currentButton.selected = NO;
-    self.currentButton = sender;
-    self.currentButton.selected = YES;
-    [self.recipeItemView reloadData];
-}
-- (IBAction)buttonNiuYang:(id)sender
-{
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryNiuYang];
-    self.currentButton.selected = NO;
-    self.currentButton = sender;
-    self.currentButton.selected = YES;
-    [self.recipeItemView reloadData];
-}
-- (IBAction)buttonYuXia:(id)sender
-{
-    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryYuXia];
-    self.currentButton.selected = NO;
-    self.currentButton = sender;
-    self.currentButton.selected = YES;
-    [self.recipeItemView reloadData];
-}
-
-- (IBAction)buttonOpenURL:(id)sender
-{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.haochi123.com"]];
-}
-- (IBAction)buttonMusic:(id)sender
-{
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    if (appDelegate.audioPlayer.playing == NO)
+    // 按钮
+    UIButton *btnMore = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnMore.frame = RECT_MOREBUTTON;
+    [btnMore setBackgroundImage:[UIImage imageNamed:@"btn_more.png"] forState:UIControlStateNormal];
+    [btnMore addTarget:self action:@selector(buttonMore:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnMore];
+    
+    UIButton *btnTimer = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnTimer.frame = RECT_TIMERBUTTON;
+    [btnTimer setBackgroundImage:[UIImage imageNamed:@"btn_timer.png"] forState:UIControlStateNormal];
+    [btnTimer addTarget:self action:@selector(buttonTimer:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnTimer];
+    
+    UIButton *btnMusic = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnMusic.frame = RECT_MUSICBUTTON;
+    [btnMusic setBackgroundImage:[UIImage imageNamed:@"btn_coffee.png"] forState:UIControlStateNormal];
+    [btnMusic addTarget:self action:@selector(buttonMusic:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnMusic];
+    
+    UIButton *btnURL = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnURL.frame = RECT_URLBUTTON;
+    [btnURL setBackgroundImage:[UIImage imageNamed:@"btn_haochi123.png"] forState:UIControlStateNormal];
+    [btnURL addTarget:self action:@selector(buttonOpenURL:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnURL];
+    
+    // 分类按钮
+    for (int i = 0; i<[dataManager getCategoryCount]; i++)
     {
-        [appDelegate.audioPlayer play];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        int x = i%2 == 0 ? CATEGORYBUTTON_COL1_X : CATEGORYBUTTON_COL2_X;
+        int y = CATEGORYBUTTON_INIT_Y + (i/2) * (CATEGORYBUTTON_SIZE.height+CATEGORYBUTTON_V_SPACING);
+        btn.frame = CGRectMake(x, y, CATEGORYBUTTON_SIZE.width, CATEGORYBUTTON_SIZE.height);
+        NSString *imgName = [dataManager getCategoryImageName:i];
+        NSInteger tag = [[dataManager getCategoryEnumValue:i] integerValue];
+        [btn setBackgroundImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"btn_selected.png"] forState:UIControlStateSelected];
+        [btn setTag:tag];
+        [btn addTarget:self action:@selector(buttonCategory:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+    }
+    self.currentButton = (UIButton*)[self.view viewWithTag:CBRecipeCategoryAll];
+    self.currentButton.selected = YES;
+    // GIRD
+    self.currentData = [dataManager getRecipesNameOfCategory:CBRecipeCategoryAll];
+    self.recipeGridView = [[GMGridView alloc] initWithFrame:RECIPEGRID_FRAME];
+    self.recipeGridView.style = GMGridViewStyleSwap;
+    self.recipeGridView.itemSpacing = RECIPEGRID_ITEM_SPACING;
+    self.recipeGridView.minEdgeInsets = UIEdgeInsetsMake(RECIPEGRID_EDGE_TOPBOTTOM, RECIPEGRID_EDGE_LEFTRIGHT, RECIPEGRID_EDGE_TOPBOTTOM, 0);
+    self.recipeGridView.actionDelegate = self;
+    self.recipeGridView.dataSource = self;
+    self.recipeGridView.centerGrid = NO;
+    self.recipeGridView.clipsToBounds = YES;
+    self.recipeGridView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.recipeGridView];
+    
+    // musice
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];
+    NSData *mp3Data = [NSData dataWithContentsOfFile:path];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:mp3Data error:NULL];
+    self.audioPlayer.volume = 0.5;
+    self.audioPlayer.numberOfLoops = NSIntegerMax;
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
+    
+}
+
+
+- (void)buttonMore:(id)sender
+{
+    
+}
+
+- (void)buttonMusic:(id)sender
+{
+    if (self.audioPlayer.playing == NO)
+    {
+        [self.audioPlayer play];
     }
     else
     {
-        [appDelegate.audioPlayer stop];
+        [self.audioPlayer stop];
     }
 }
-- (IBAction)buttonTimer:(id)sender
+- (void)buttonTimer:(id)sender
 {
+}
+
+- (void)buttonOpenURL:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.haochi123.com"]];
+}
+
+- (void)buttonCategory:(id)sender
+{
+    UIButton *btn = sender;
+    self.currentData = [dataManager getRecipesNameOfCategory:btn.tag];
+    self.currentButton.selected = NO;
+    self.currentButton = btn;
+    self.currentButton.selected = YES;
+    [self.recipeGridView reloadData];
 }
 
 //////////////////////////////////////////////////////////////
@@ -136,7 +171,7 @@
 
 - (CGSize)GMGridView:(GMGridView *)gridView sizeForItemsInInterfaceOrientation:(UIInterfaceOrientation)orientation
 {
-    return RECIPEITEM_SIZE;
+    return RECIPEGRID_ITEM_SIZE;
 }
 
 - (GMGridViewCell *)GMGridView:(GMGridView *)gridView cellForItemAtIndex:(NSInteger)index
@@ -185,8 +220,7 @@
 }
 
 - (void)viewDidUnload {
-    [self setRecipeItemView:nil];
-    [self setCurrentButton:nil];
+    [self setRecipeGridView:nil];
     [super viewDidUnload];
 }
 @end
