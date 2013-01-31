@@ -11,7 +11,7 @@
 #import "CBDataManager.h"
 #import "RecipeViewController.h"
 #import "AppDelegate.h"
-
+#import "TimerViewController.h"
 // grid控件位置
 #define RECIPEGRID_FRAME                 CGRectMake(320, 0,  784, 768)
 #define RECIPEGRID_EDGE_TOPBOTTOM        36
@@ -27,6 +27,8 @@
 #define RECT_TIMERBUTTON                 CGRectMake(181,619, 95, 154)
 #define RECT_URLBUTTON                   CGRectMake(69, 505, 188,67)
 
+// 定时窗口位置
+#define RECT_TIMERMODULVIEW              CGRectMake(0, 0, 448, 268)
 // 分类按钮位置
 #define CATEGORYBUTTON_SIZE              CGSizeMake(99, 44)
 #define CATEGORYBUTTON_COL1_X            61
@@ -144,6 +146,11 @@
 }
 - (void)buttonTimer:(id)sender
 {
+    TimerViewController *tvc = [[TimerViewController alloc] initWithNibName:nil bundle:nil];
+    tvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    tvc.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:tvc animated:YES completion:nil];
+    tvc.view.superview.bounds = RECT_TIMERMODULVIEW;
 }
 
 - (void)buttonOpenURL:(id)sender
@@ -209,7 +216,8 @@
 {
     RecipeViewController * rvc = [[RecipeViewController alloc] initWithNibName:nil bundle:nil];
     rvc.name = self.currentData[position];
-    [self presentViewController:rvc animated:NO completion:nil];
+    rvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:rvc animated:YES completion:nil];
 }
 
 

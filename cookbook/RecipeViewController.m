@@ -158,7 +158,7 @@
 }
 - (void)buttonReturn:(id)sender
 {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)buttonMusic:(id)sender
 {

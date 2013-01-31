@@ -36,6 +36,10 @@
 		B5843B7C16B789D000757EBD /* btn_timer.png in Resources */ = {isa = PBXBuildFile; fileRef = B5843B7316B789D000757EBD /* btn_timer.png */; };
 		B5843B7D16B789D000757EBD /* btn_title.png in Resources */ = {isa = PBXBuildFile; fileRef = B5843B7416B789D000757EBD /* btn_title.png */; };
 		B5843B7F16B790C600757EBD /* Category in Resources */ = {isa = PBXBuildFile; fileRef = B5843B7E16B790C600757EBD /* Category */; };
+		B5843B8316B7A18300757EBD /* bg_timer.png in Resources */ = {isa = PBXBuildFile; fileRef = B5843B8016B7A18300757EBD /* bg_timer.png */; };
+		B5843B8416B7A18300757EBD /* btn_timerbeg.png in Resources */ = {isa = PBXBuildFile; fileRef = B5843B8116B7A18300757EBD /* btn_timerbeg.png */; };
+		B5843B8516B7A18300757EBD /* btn_timercancel.png in Resources */ = {isa = PBXBuildFile; fileRef = B5843B8216B7A18300757EBD /* btn_timercancel.png */; };
+		B5843B8816B7A1C500757EBD /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5843B8716B7A1C500757EBD /* TimerViewController.m */; };
 		B593BE5516B20FB1007D5702 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B593BE5416B20FB1007D5702 /* CoreText.framework */; };
 		B593BEA616B23880007D5702 /* NSAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B593BE9F16B23880007D5702 /* NSAttributedString+Attributes.m */; };
 		B593BEA716B23880007D5702 /* NSTextCheckingResult+ExtendedURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B593BEA116B23880007D5702 /* NSTextCheckingResult+ExtendedURL.m */; };
@@ -95,6 +99,11 @@
 		B5843B7316B789D000757EBD /* btn_timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_timer.png; sourceTree = "<group>"; };
 		B5843B7416B789D000757EBD /* btn_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_title.png; sourceTree = "<group>"; };
 		B5843B7E16B790C600757EBD /* Category */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Category; sourceTree = "<group>"; };
+		B5843B8016B7A18300757EBD /* bg_timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_timer.png; sourceTree = "<group>"; };
+		B5843B8116B7A18300757EBD /* btn_timerbeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_timerbeg.png; sourceTree = "<group>"; };
+		B5843B8216B7A18300757EBD /* btn_timercancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_timercancel.png; sourceTree = "<group>"; };
+		B5843B8616B7A1C400757EBD /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		B5843B8716B7A1C500757EBD /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		B593BE5416B20FB1007D5702 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B593BE9E16B23880007D5702 /* NSAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Attributes.h"; sourceTree = "<group>"; };
 		B593BE9F16B23880007D5702 /* NSAttributedString+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Attributes.m"; sourceTree = "<group>"; };
@@ -181,6 +190,8 @@
 				B516178516AE6E7200099ED3 /* ViewController.m */,
 				B5BD084A16B10397009C23F2 /* RecipeViewController.h */,
 				B5BD084B16B10397009C23F2 /* RecipeViewController.m */,
+				B5843B8616B7A1C400757EBD /* TimerViewController.h */,
+				B5843B8716B7A1C500757EBD /* TimerViewController.m */,
 				B5BD083816AF9188009C23F2 /* CBDataManager.h */,
 				B5BD083916AF9188009C23F2 /* CBDataManager.m */,
 				B516177016AE6E7200099ED3 /* Supporting Files */,
@@ -237,6 +248,9 @@
 				B5843B7216B789D000757EBD /* btn_selected.png */,
 				B5843B7316B789D000757EBD /* btn_timer.png */,
 				B5843B7416B789D000757EBD /* btn_title.png */,
+				B5843B8016B7A18300757EBD /* bg_timer.png */,
+				B5843B8116B7A18300757EBD /* btn_timerbeg.png */,
+				B5843B8216B7A18300757EBD /* btn_timercancel.png */,
 				B593BEBD16B2B48B007D5702 /* music.mp3 */,
 				B5BD07CD16AF3632009C23F2 /* data.plist */,
 			);
@@ -332,6 +346,9 @@
 				B5843B7C16B789D000757EBD /* btn_timer.png in Resources */,
 				B5843B7D16B789D000757EBD /* btn_title.png in Resources */,
 				B5843B7F16B790C600757EBD /* Category in Resources */,
+				B5843B8316B7A18300757EBD /* bg_timer.png in Resources */,
+				B5843B8416B7A18300757EBD /* btn_timerbeg.png in Resources */,
+				B5843B8516B7A18300757EBD /* btn_timercancel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +375,7 @@
 				B593BEA816B23880007D5702 /* OHAttributedLabel.m in Sources */,
 				B593BEA916B23880007D5702 /* OHParagraphStyle.m in Sources */,
 				B593BEAC16B238E5007D5702 /* CoreTextUtils.m in Sources */,
+				B5843B8816B7A1C500757EBD /* TimerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

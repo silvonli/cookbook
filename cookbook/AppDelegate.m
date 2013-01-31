@@ -13,7 +13,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
     // 启动画面动画
     self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 1024, 768)];
     self.splashView.image = [UIImage imageNamed:@"Default-Landscape.png"];
@@ -37,6 +36,18 @@
     return YES;
 }
 
+- (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    if(application.applicationState == UIApplicationStateActive )
+    {
+        [[[UIAlertView alloc] initWithTitle:@"提醒"
+                                    message:[NSString stringWithFormat:@"你的菜该好了，快去看看吧！"]
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
+}
+     
 - (void)startupAnimationDone:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
 	[self.splashView removeFromSuperview];
