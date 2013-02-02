@@ -54,6 +54,26 @@
 		B5BD085116B10FCB009C23F2 /* 菜谱_背景.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD084D16B10FCB009C23F2 /* 菜谱_背景.png */; };
 		B5BD085216B10FCB009C23F2 /* 菜谱_返回.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD084E16B10FCB009C23F2 /* 菜谱_返回.png */; };
 		B5BD085316B10FCB009C23F2 /* 菜谱_画框.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BD084F16B10FCB009C23F2 /* 菜谱_画框.png */; };
+		B5E7E94E16BA3A460079F2C0 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7E94D16BA3A450079F2C0 /* MoreViewController.m */; };
+		B5E7E95116BA428B0079F2C0 /* bg_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E94F16BA428B0079F2C0 /* bg_more.png */; };
+		B5E7E95216BA428B0079F2C0 /* bg_moreNav.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E95016BA428B0079F2C0 /* bg_moreNav.png */; };
+		B5E7E95416BA47A00079F2C0 /* btn_moreclose.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E95316BA47A00079F2C0 /* btn_moreclose.png */; };
+		B5E7E95616BB697E0079F2C0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E95516BB697D0079F2C0 /* Parse.framework */; };
+		B5E7E95C16BB6A850079F2C0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E95716BB6A840079F2C0 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E7E95D16BB6A850079F2C0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E95816BB6A850079F2C0 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E7E95E16BB6A850079F2C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E95916BB6A850079F2C0 /* AudioToolbox.framework */; };
+		B5E7E95F16BB6A850079F2C0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E95A16BB6A850079F2C0 /* CFNetwork.framework */; };
+		B5E7E96016BB6A850079F2C0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E95B16BB6A850079F2C0 /* CoreLocation.framework */; };
+		B5E7E96216BB6AA20079F2C0 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E96116BB6AA20079F2C0 /* libz.1.1.3.dylib */; };
+		B5E7E96416BB6AC40079F2C0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E96316BB6AC40079F2C0 /* libsqlite3.dylib */; };
+		B5E7E96616BB6AD30079F2C0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E96516BB6AD30079F2C0 /* MobileCoreServices.framework */; };
+		B5E7E96816BB6B140079F2C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E96716BB6B140079F2C0 /* Security.framework */; };
+		B5E7E96A16BB6B250079F2C0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E96916BB6B250079F2C0 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E7E96C16BB6B310079F2C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E96B16BB6B300079F2C0 /* StoreKit.framework */; };
+		B5E7E96E16BB6B3C0079F2C0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E7E96D16BB6B3C0079F2C0 /* SystemConfiguration.framework */; };
+		B5E7E97616BB8C640079F2C0 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E97316BB8C630079F2C0 /* Icon-72.png */; };
+		B5E7E97716BB8C640079F2C0 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E97416BB8C630079F2C0 /* Icon-72@2x.png */; };
+		B5E7E97816BB8C640079F2C0 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E97516BB8C640079F2C0 /* iTunesArtwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +145,27 @@
 		B5BD084D16B10FCB009C23F2 /* 菜谱_背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "菜谱_背景.png"; sourceTree = "<group>"; };
 		B5BD084E16B10FCB009C23F2 /* 菜谱_返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "菜谱_返回.png"; sourceTree = "<group>"; };
 		B5BD084F16B10FCB009C23F2 /* 菜谱_画框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "菜谱_画框.png"; sourceTree = "<group>"; };
+		B5E7E94C16BA3A450079F2C0 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		B5E7E94D16BA3A450079F2C0 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		B5E7E94F16BA428B0079F2C0 /* bg_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_more.png; sourceTree = "<group>"; };
+		B5E7E95016BA428B0079F2C0 /* bg_moreNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_moreNav.png; sourceTree = "<group>"; };
+		B5E7E95316BA47A00079F2C0 /* btn_moreclose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_moreclose.png; sourceTree = "<group>"; };
+		B5E7E95516BB697D0079F2C0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B5E7E95716BB6A840079F2C0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		B5E7E95816BB6A850079F2C0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		B5E7E95916BB6A850079F2C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B5E7E95A16BB6A850079F2C0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B5E7E95B16BB6A850079F2C0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B5E7E96116BB6AA20079F2C0 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		B5E7E96316BB6AC40079F2C0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B5E7E96516BB6AD30079F2C0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B5E7E96716BB6B140079F2C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B5E7E96916BB6B250079F2C0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B5E7E96B16BB6B300079F2C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B5E7E96D16BB6B3C0079F2C0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B5E7E97316BB8C630079F2C0 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "cookbook/Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		B5E7E97416BB8C630079F2C0 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "cookbook/Icon-72@2x.png"; sourceTree = SOURCE_ROOT; };
+		B5E7E97516BB8C640079F2C0 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = cookbook/iTunesArtwork; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +173,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E7E96E16BB6B3C0079F2C0 /* SystemConfiguration.framework in Frameworks */,
+				B5E7E96C16BB6B310079F2C0 /* StoreKit.framework in Frameworks */,
+				B5E7E96A16BB6B250079F2C0 /* Social.framework in Frameworks */,
+				B5E7E96816BB6B140079F2C0 /* Security.framework in Frameworks */,
+				B5E7E96616BB6AD30079F2C0 /* MobileCoreServices.framework in Frameworks */,
+				B5E7E96416BB6AC40079F2C0 /* libsqlite3.dylib in Frameworks */,
+				B5E7E96216BB6AA20079F2C0 /* libz.1.1.3.dylib in Frameworks */,
+				B5E7E95C16BB6A850079F2C0 /* Accounts.framework in Frameworks */,
+				B5E7E95D16BB6A850079F2C0 /* AdSupport.framework in Frameworks */,
+				B5E7E95E16BB6A850079F2C0 /* AudioToolbox.framework in Frameworks */,
+				B5E7E95F16BB6A850079F2C0 /* CFNetwork.framework in Frameworks */,
+				B5E7E96016BB6A850079F2C0 /* CoreLocation.framework in Frameworks */,
+				B516176E16AE6E7200099ED3 /* CoreGraphics.framework in Frameworks */,
 				B593BEC016B2B512007D5702 /* AVFoundation.framework in Frameworks */,
 				B593BE5516B20FB1007D5702 /* CoreText.framework in Frameworks */,
 				B51617AF16AE71EA00099ED3 /* QuartzCore.framework in Frameworks */,
 				B516176A16AE6E7200099ED3 /* UIKit.framework in Frameworks */,
 				B516176C16AE6E7200099ED3 /* Foundation.framework in Frameworks */,
-				B516176E16AE6E7200099ED3 /* CoreGraphics.framework in Frameworks */,
+				B5E7E95616BB697E0079F2C0 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +218,19 @@
 		B516176816AE6E7200099ED3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5E7E96D16BB6B3C0079F2C0 /* SystemConfiguration.framework */,
+				B5E7E96B16BB6B300079F2C0 /* StoreKit.framework */,
+				B5E7E96916BB6B250079F2C0 /* Social.framework */,
+				B5E7E96716BB6B140079F2C0 /* Security.framework */,
+				B5E7E96516BB6AD30079F2C0 /* MobileCoreServices.framework */,
+				B5E7E96316BB6AC40079F2C0 /* libsqlite3.dylib */,
+				B5E7E96116BB6AA20079F2C0 /* libz.1.1.3.dylib */,
+				B5E7E95716BB6A840079F2C0 /* Accounts.framework */,
+				B5E7E95816BB6A850079F2C0 /* AdSupport.framework */,
+				B5E7E95916BB6A850079F2C0 /* AudioToolbox.framework */,
+				B5E7E95A16BB6A850079F2C0 /* CFNetwork.framework */,
+				B5E7E95B16BB6A850079F2C0 /* CoreLocation.framework */,
+				B5E7E95516BB697D0079F2C0 /* Parse.framework */,
 				B593BEBF16B2B511007D5702 /* AVFoundation.framework */,
 				B593BE5416B20FB1007D5702 /* CoreText.framework */,
 				B51617AE16AE71EA00099ED3 /* QuartzCore.framework */,
@@ -192,6 +259,8 @@
 				B5BD084B16B10397009C23F2 /* RecipeViewController.m */,
 				B5843B8616B7A1C400757EBD /* TimerViewController.h */,
 				B5843B8716B7A1C500757EBD /* TimerViewController.m */,
+				B5E7E94C16BA3A450079F2C0 /* MoreViewController.h */,
+				B5E7E94D16BA3A450079F2C0 /* MoreViewController.m */,
 				B5BD083816AF9188009C23F2 /* CBDataManager.h */,
 				B5BD083916AF9188009C23F2 /* CBDataManager.m */,
 				B516177016AE6E7200099ED3 /* Supporting Files */,
@@ -251,6 +320,12 @@
 				B5843B8016B7A18300757EBD /* bg_timer.png */,
 				B5843B8116B7A18300757EBD /* btn_timerbeg.png */,
 				B5843B8216B7A18300757EBD /* btn_timercancel.png */,
+				B5E7E94F16BA428B0079F2C0 /* bg_more.png */,
+				B5E7E95016BA428B0079F2C0 /* bg_moreNav.png */,
+				B5E7E95316BA47A00079F2C0 /* btn_moreclose.png */,
+				B5E7E97316BB8C630079F2C0 /* Icon-72.png */,
+				B5E7E97416BB8C630079F2C0 /* Icon-72@2x.png */,
+				B5E7E97516BB8C640079F2C0 /* iTunesArtwork */,
 				B593BEBD16B2B48B007D5702 /* music.mp3 */,
 				B5BD07CD16AF3632009C23F2 /* data.plist */,
 			);
@@ -349,6 +424,12 @@
 				B5843B8316B7A18300757EBD /* bg_timer.png in Resources */,
 				B5843B8416B7A18300757EBD /* btn_timerbeg.png in Resources */,
 				B5843B8516B7A18300757EBD /* btn_timercancel.png in Resources */,
+				B5E7E95116BA428B0079F2C0 /* bg_more.png in Resources */,
+				B5E7E95216BA428B0079F2C0 /* bg_moreNav.png in Resources */,
+				B5E7E95416BA47A00079F2C0 /* btn_moreclose.png in Resources */,
+				B5E7E97616BB8C640079F2C0 /* Icon-72.png in Resources */,
+				B5E7E97716BB8C640079F2C0 /* Icon-72@2x.png in Resources */,
+				B5E7E97816BB8C640079F2C0 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +457,7 @@
 				B593BEA916B23880007D5702 /* OHParagraphStyle.m in Sources */,
 				B593BEAC16B238E5007D5702 /* CoreTextUtils.m in Sources */,
 				B5843B8816B7A1C500757EBD /* TimerViewController.m in Sources */,
+				B5E7E94E16BA3A460079F2C0 /* MoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +492,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yu wang (98D984K3E5)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -424,6 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "463B53BF-3205-46EC-B377-09EDE9EA774F";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -447,7 +530,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "282906B1-F66F-49E6-A50F-31F9BEC5D07C";
+				PROVISIONING_PROFILE = "463B53BF-3205-46EC-B377-09EDE9EA774F";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -457,6 +540,10 @@
 		B516178A16AE6E7200099ED3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cookbook/cookbook-Prefix.pch";
 				INFOPLIST_FILE = "cookbook/cookbook-Info.plist";
@@ -469,6 +556,10 @@
 		B516178B16AE6E7200099ED3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cookbook/cookbook-Prefix.pch";
 				INFOPLIST_FILE = "cookbook/cookbook-Info.plist";

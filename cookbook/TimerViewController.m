@@ -14,13 +14,19 @@
 #define SUPERVIEW_CORNERRADIUS   44.0
 
 // 按钮位置
-#define RECT_BEGINBUTTON         CGRectMake(244, 202, 121, 46)
-#define RECT_CANCELBUTTON        CGRectMake(83, 202, 121, 46)
+#define BUTTON_FRAME             CGRectMake(164, 202, 121, 46)
+#define COLOSEBUTTON_FRAME       CGRectMake(320, -10, 44,  44)
 // PICKER位置
-#define RECT_PICKERVIEW          CGRectMake(64, 10, 320, 200)
-#define RECT_PICKEMASK           CGRectMake(11, 11, 298, 320)
-#define POINT_LABELHOURS         CGPointMake(120, 88)
-#define POINT_LABELMINS          CGPointMake(270, 88)
+#define PICKER_FRAME             CGRectMake(64, 10, 320, 200)
+#define PICKER_MASK              CGRectMake(10, 11, 300, 320)
+#define PICKER_LABELHOURS_FRAME  CGRectMake(70, 82, 100, 20 )
+#define PICKER_LABELMINS_FRAME   CGRectMake(220,82, 100, 20 )
+
+#define COUNTDOWN_FRAME          PICKER_FRAME
+
+#define LOCALNOTIFY_NAME_KEY     @"IamKey"
+#define LOCALNOTIFY_NAME_VALUE   @"itIsOK"
+
 @interface TimerViewController ()
 
 @end
@@ -41,12 +47,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_timer.png"]];    
-    
+    self.view.clipsToBounds   = NO;
     // 数据
     NSMutableArray *hoursArray = [[NSMutableArray alloc] init];
     for (int i=0; i<24; i++)
     {
-        NSString *str = [[NSNumber numberWithInt:i] stringValue];
+        NSString *str = [NSString  stringWithFormat:@"%02d",i];
         [hoursArray addObject:str];
     }
     self.hoursArray = hoursArray;
@@ -54,112 +60,193 @@
     NSMutableArray *minsArray = [[NSMutableArray alloc] init];
     for (int i=0; i<61; i++)
     {
-        NSString *str = [[NSNumber numberWithInt:i] stringValue];
+        NSString *str = [NSString  stringWithFormat:@"%02d",i];
         [minsArray addObject:str];
     }
     self.minsArray = minsArray;
     
+    self.pickModel = [self itIsOKNotifications]==nil;
+    
     [self addPickerView];
-    [self addPickerLabel:@"小时" position:POINT_LABELHOURS];
-    [self addPickerLabel:@"分钟" position:POINT_LABELMINS];
+    [self addCountDownLabel];
     
-    UIButton *btnBeg = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnBeg.frame = RECT_BEGINBUTTON;
-    [btnBeg setBackgroundImage:[UIImage imageNamed:@"btn_timerbeg.png"] forState:UIControlStateNormal];
-    [btnBeg addTarget:self action:@selector(buttonBegin:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btnBeg];
+    self.beginButton        = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.beginButton.frame  = BUTTON_FRAME;
+    [self.beginButton setBackgroundImage:[UIImage imageNamed:@"btn_timerbeg.png"] forState:UIControlStateNormal];
+    [self.beginButton addTarget:self action:@selector(btnBeginTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.beginButton];
     
-    UIButton *btnCanel = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnCanel.frame = RECT_CANCELBUTTON;
-    [btnCanel setBackgroundImage:[UIImage imageNamed:@"btn_timercancel.png"] forState:UIControlStateNormal];
-    [btnCanel addTarget:self action:@selector(buttonCancel:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btnCanel];
+    self.cancelButton       = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.cancelButton.frame = BUTTON_FRAME;
+    [self.cancelButton setBackgroundImage:[UIImage imageNamed:@"btn_timercancel.png"] forState:UIControlStateNormal];
+    [self.cancelButton addTarget:self action:@selector(btnCancelTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.cancelButton];
+    
+    UIButton *btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnClose.frame = COLOSEBUTTON_FRAME;
+    [btnClose setBackgroundImage:[UIImage imageNamed:@"btn_moreclose.png"] forState:UIControlStateNormal];
+    [btnClose addTarget:self action:@selector(btnCloseTap:) forControlEvents:UIControlEventTouchUpInside];
+    //[self.view addSubview:btnClose];
+    
+    [self refreshDisplay];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 
+
+}
+
+- (void) refreshDisplay
+{
+    if (self.pickModel)
+    {
+        self.pickerView.hidden          = NO;
+        self.countDownLable.hidden      = YES;
+        self.beginButton.hidden         = NO;
+        self.cancelButton.hidden        = YES;
+        [self.timer invalidate];
+    }
+    else
+    {
+        self.pickerView.hidden          = YES;
+        self.countDownLable.hidden      = NO;
+        self.beginButton.hidden         = YES;
+        self.cancelButton.hidden        = NO;
+        // 更新UILabel定时器
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCountDown:) userInfo:nil repeats:YES];
+        [self.timer fire];
+    }
+}
+
+- (void)updateCountDown:(id)sender
+{
+    UILocalNotification *notif = [self itIsOKNotifications];
+    if (notif == nil)
+    {
+        return;
+    }
+    
+    int interval = (int)[notif.fireDate timeIntervalSinceNow];
+    if (interval > 0)
+    {
+        int nHours = floor(interval/3600);
+        int nMins  = (interval%3600)/60;
+        int nSecs  = (interval%3600)%60;
+        self.countDownLable.text = [NSString stringWithFormat:@"%02d:%02d:%02d",nHours, nMins, nSecs];
+    }
+}
+
+- (void)addCountDownLabel
+{
+    self.countDownLable                 = [[UILabel alloc] initWithFrame:COUNTDOWN_FRAME];
+    self.countDownLable.text            = @"00:00:00";
+    self.countDownLable.font            = [UIFont systemFontOfSize:48];
+    self.countDownLable.textAlignment   = UITextAlignmentCenter;
+    self.countDownLable.textColor       = [UIColor whiteColor];
+    self.countDownLable.backgroundColor = [UIColor clearColor];
+    self.countDownLable.shadowColor     = [UIColor colorWithWhite:0.0f alpha:0.7f];
+    self.countDownLable.shadowOffset    = CGSizeMake(0.f, 1.0f);
+    [self.view addSubview:self.countDownLable];
+}
+
+- (void)addPickerView
+{
+    self.pickerView = [[UIPickerView alloc] initWithFrame:PICKER_FRAME];
+    self.pickerView.dataSource              = self;
+	self.pickerView.delegate                = self;
+	self.pickerView.showsSelectionIndicator = YES;
+    [self.pickerView selectRow:15 inComponent:1 animated:NO];
+    [self.view addSubview:self.pickerView];
+    
+    CALayer* mask = [[CALayer alloc] init];
+    [mask setBackgroundColor: [UIColor blackColor].CGColor];
+    [mask setFrame: PICKER_MASK];
+    [mask setCornerRadius: 6.0f];
+    [self.pickerView.layer setMask: mask];
+    
+    UIFont *font  = [UIFont fontWithName:@"STHeitiSC-Light" size:18];
+    UILabel *label          = [[UILabel alloc] initWithFrame:PICKER_LABELHOURS_FRAME];
+    label.text              = @"小时";
+    label.font              = font;
+    label.textColor         = [UIColor darkGrayColor];
+    label.backgroundColor   = [UIColor clearColor];
+    [self.pickerView addSubview:label];
+    
+    UILabel *label2 = [[UILabel alloc] initWithFrame:PICKER_LABELMINS_FRAME];
+    label2.text             = @"分钟";
+    label2.font             = font;
+    label2.textColor        = [UIColor darkGrayColor];
+    label2.backgroundColor  = [UIColor clearColor];
+    [self.pickerView addSubview:label2];
+    
+}
+
+- (void)btnBeginTap:(id)sender
+{
+    self.pickModel = ![self scheduleNotify];
+    [self refreshDisplay];
+}
+
+- (void)btnCancelTap:(id)sender
+{
+    self.pickModel = [self cancelNotify];
+    [self refreshDisplay];
+}
+
+- (UILocalNotification*) itIsOKNotifications
+{
+    for (UILocalNotification *notification in [[[UIApplication sharedApplication] scheduledLocalNotifications] copy])
+    {
+        NSDictionary *userInfo = notification.userInfo;
+        if ([LOCALNOTIFY_NAME_VALUE isEqualToString:[userInfo objectForKey:LOCALNOTIFY_NAME_KEY]])
+        {
+            return notification;
+        }
+    }
+    return nil;
+}
+
+- (BOOL) scheduleNotify
+{
+    [self cancelNotify];
+    
+    NSString *hoursStr = [self.hoursArray objectAtIndex:[self.pickerView selectedRowInComponent:0]];
+    NSString *minsStr  = [self.minsArray objectAtIndex:[self.pickerView selectedRowInComponent:1]];
+    int interval = [hoursStr intValue]*3600 + [minsStr intValue]*60;
+    
+    if (interval<=0)
+    {
+        return NO;
+    }
+    
+    NSDate *pickerDate = [[NSDate alloc] initWithTimeIntervalSinceNow:interval];
+    UILocalNotification *notif = [[UILocalNotification alloc] init];
+    notif.fireDate  = pickerDate;
+    notif.timeZone  = [NSTimeZone defaultTimeZone];
+    notif.alertBody = @"你的菜该好了，快去看看吧！";
+    notif.soundName = UILocalNotificationDefaultSoundName;
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:LOCALNOTIFY_NAME_VALUE forKey:LOCALNOTIFY_NAME_KEY];
+    notif.userInfo = userInfo;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notif];
+    return YES;
+    
+}
+- (BOOL) cancelNotify
+{
+    for (UILocalNotification *notification in [[[UIApplication sharedApplication] scheduledLocalNotifications] copy])
+    {
+        NSDictionary *userInfo = notification.userInfo;
+        if ([LOCALNOTIFY_NAME_VALUE isEqualToString:[userInfo objectForKey:LOCALNOTIFY_NAME_KEY]])
+        {
+            [[UIApplication sharedApplication] cancelLocalNotification:notification];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     self.view.superview.layer.cornerRadius  = SUPERVIEW_CORNERRADIUS;
     self.view.superview.layer.masksToBounds = YES;
-}
-
-- (void) viewDidUnload
-{
-    [self setCustomPickerView:nil];
-    [super viewDidUnload];
-}
-
-- (void)buttonBegin:(id)sender
-{
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-
-    NSDate *pickerDate = [[NSDate alloc] initWithTimeIntervalSinceNow:self.interval];
-    UILocalNotification *notif = [[UILocalNotification alloc] init];
-    notif.fireDate = pickerDate;
-    notif.timeZone = [NSTimeZone defaultTimeZone];
-    notif.alertBody = @"你的菜该好了，快去看看吧！";
-    notif.soundName = UILocalNotificationDefaultSoundName;
-    notif.applicationIconBadgeNumber = 1;
-    [[UIApplication sharedApplication] scheduleLocalNotification:notif];
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)buttonCancel:(id)sender
-{
-    self.interval = 0;
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)addPickerView
-{
-    self.customPickerView = [[UIPickerView alloc] initWithFrame:RECT_PICKERVIEW];
-    self.customPickerView.dataSource = self;
-	self.customPickerView.delegate = self;
-	self.customPickerView.showsSelectionIndicator = YES;
-    [self.view addSubview:self.customPickerView];
-    
-    CALayer* mask = [[CALayer alloc] init];
-    [mask setBackgroundColor: [UIColor blackColor].CGColor];
-    [mask setFrame: RECT_PICKEMASK];
-    [mask setCornerRadius: 5.0f];
-    [self.customPickerView.layer setMask: mask];
-    
-    NSArray *notifArr = [[UIApplication sharedApplication] scheduledLocalNotifications];
-   
-    if (notifArr.count == 1)
-    {
-        UILocalNotification *notif = notifArr[0];
-        NSTimeInterval interval = [notif.fireDate timeIntervalSinceNow];
-        if (interval > 0)
-        {
-            int nHours = floor(interval/3600);
-            int nMins  = (int)round((interval - nHours*3600)/60);
-            
-            [self.customPickerView selectRow:nHours inComponent:0 animated:YES];
-            [self.customPickerView selectRow:nMins inComponent:1 animated:YES];
-            self.interval = interval;
-        }
-    }
-    
-}
-
-- (void)addPickerLabel:(NSString *)labelString position:(CGPoint)pos
-{
-    UIFont *font = [UIFont fontWithName:@"STHeitiSC-Light" size:22];
-    CGFloat width = [labelString sizeWithFont:font].width;
-    CGFloat height= [labelString sizeWithFont:font].height;
-
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(pos.x, pos.y, width, height)];
-    label.text = labelString;
-    label.font = font;
-    label.textColor = [UIColor grayColor];
-    label.backgroundColor = [UIColor clearColor];
-    label.shadowColor  = [UIColor colorWithWhite:0.0f alpha:0.7f];
-    label.shadowOffset = CGSizeMake(0.f, 1.0f);
-    [self.view addSubview:label];
-
 }
 
 #pragma mark -
@@ -211,20 +298,23 @@
 	return returnStr;
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    NSString *hoursStr = [self.hoursArray objectAtIndex:[pickerView selectedRowInComponent:0]];
-    NSString *minsStr = [self.minsArray objectAtIndex:[pickerView selectedRowInComponent:1]];
-    int hoursInt = [hoursStr intValue];
-    int minsInt = [minsStr intValue];
-    self.interval = (hoursInt*3600) + (minsInt*60);
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
-                          
+
+- (void) viewDidUnload
+{
+    [self setPickerView:nil];
+    [self setCountDownLable:nil];
+    [self setBeginButton:nil];
+    [self setCancelButton:nil];
+    [self setTimer:nil];
+    [self setHoursArray:nil];
+    [self setMinsArray:nil];
+    [super viewDidUnload];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

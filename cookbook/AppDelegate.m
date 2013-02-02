@@ -7,19 +7,23 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Parse/Parse.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"jAyjBkPg6CV09Rl63UBkDW7Q7cZ45UcjtDkv2uZk"
+                  clientKey:@"I07Vt5Y81YHJSl2KQ0KeI5DUpZ7DaJrZZYuVaRCd"];
+    
     // 启动画面动画
     self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 1024, 768)];
     self.splashView.image = [UIImage imageNamed:@"Default-Landscape.png"];
     [self.window.rootViewController.view addSubview:self.splashView];
     [self.window.rootViewController.view bringSubviewToFront:self.splashView];
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration: 1];
+    [UIView setAnimationDuration: 2];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
     self.splashView.alpha = 0.0;

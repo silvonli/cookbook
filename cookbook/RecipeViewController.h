@@ -10,7 +10,6 @@
 
 @interface RecipeViewController : UIViewController<UIScrollViewDelegate>
 
-@property(nonatomic, strong) UIScrollView * scrollView;
-@property(nonatomic, strong) UIPageControl *pageControl;
-@property (strong, nonatomic) NSString *name;
+@property (nonatomic, strong) UIScrollView * scrollView;
+@property (nonatomic, strong) NSString *name;
 @end

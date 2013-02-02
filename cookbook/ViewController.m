@@ -12,6 +12,8 @@
 #import "RecipeViewController.h"
 #import "AppDelegate.h"
 #import "TimerViewController.h"
+#import "MoreViewController.h"
+
 // grid控件位置
 #define RECIPEGRID_FRAME                 CGRectMake(320, 0,  784, 768)
 #define RECIPEGRID_EDGE_TOPBOTTOM        36
@@ -27,8 +29,6 @@
 #define RECT_TIMERBUTTON                 CGRectMake(181,619, 95, 154)
 #define RECT_URLBUTTON                   CGRectMake(69, 505, 188,67)
 
-// 定时窗口位置
-#define RECT_TIMERMODULVIEW              CGRectMake(0, 0, 448, 268)
 // 分类按钮位置
 #define CATEGORYBUTTON_SIZE              CGSizeMake(99, 44)
 #define CATEGORYBUTTON_COL1_X            61
@@ -36,10 +36,14 @@
 #define CATEGORYBUTTON_INIT_Y            284
 #define CATEGORYBUTTON_V_SPACING         13
 
+// 更多
+#define RECT_MOREMODULVIEW               CGRectMake(0, 0, 580, 380)
+
 @interface ViewController ()<GMGridViewDataSource, GMGridViewActionDelegate>
 
 @property (nonatomic, strong) NSArray *currentData;
 @property (nonatomic, weak)   UIButton *currentButton;
+
 @end
 
 @implementation ViewController
@@ -128,7 +132,12 @@
 
 - (void)buttonMore:(id)sender
 {
-    
+    MoreViewController *mvc = [[MoreViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mvc];
+    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:nav animated:YES completion:nil];
+    nav.view.superview.bounds = RECT_MOREMODULVIEW;
 }
 
 - (void)buttonMusic:(id)sender
@@ -233,6 +242,8 @@
 
 - (void)viewDidUnload {
     [self setRecipeGridView:nil];
+    [self setBtnMusic:nil];
+    [self setCurrentData:nil];
     [super viewDidUnload];
 }
 @end

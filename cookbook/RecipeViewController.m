@@ -10,6 +10,8 @@
 #import "CBDataManager.h"
 #import "OHAttributedLabel/OHAttributedLabel.h"
 #import "AppDelegate.h"
+#import "TimerViewController.h"
+
 #define EDGE_SPACING        40
 #define SEC_SPACING         18
 #define INEDGE_SPACING      20
@@ -176,6 +178,11 @@
 }
 - (void)buttonTimer:(id)sender
 {
+    TimerViewController *tvc = [[TimerViewController alloc] initWithNibName:nil bundle:nil];
+    tvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    tvc.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:tvc animated:YES completion:nil];
+    tvc.view.superview.bounds = RECT_TIMERMODULVIEW;
 }
 
 - (void)didReceiveMemoryWarning
@@ -184,7 +191,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
+    [self setName:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
 }
 @end
