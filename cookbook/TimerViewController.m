@@ -11,16 +11,19 @@
 
 #define PICKER_COMPONENT_WIDTH   148.0
 #define PICKER_ROW_HEIGHT        30.0
-#define SUPERVIEW_CORNERRADIUS   44.0
+
+#define NAV_HEIGHT              54
+#define CLOSEBUTTON_FRAME       CGRectMake(0, 0, 37,  37)
+
+//#define RECT_TIMERMODULVIEW              CGRectMake(0, 0, 372, 415)
 
 // 按钮位置
-#define BUTTON_FRAME             CGRectMake(164, 202, 121, 46)
-#define COLOSEBUTTON_FRAME       CGRectMake(320, -10, 44,  44)
+#define BUTTON_FRAME             CGRectMake(126,272, 121, 46)
 // PICKER位置
-#define PICKER_FRAME             CGRectMake(64, 10, 320, 200)
+#define PICKER_FRAME             CGRectMake(26, 30, 320, 280)
 #define PICKER_MASK              CGRectMake(10, 11, 300, 320)
-#define PICKER_LABELHOURS_FRAME  CGRectMake(70, 82, 100, 20 )
-#define PICKER_LABELMINS_FRAME   CGRectMake(220,82, 100, 20 )
+#define PICKER_LABELHOURS_FRAME  CGRectMake(70, 100, 100, 20 )
+#define PICKER_LABELMINS_FRAME   CGRectMake(220,100, 100, 20 )
 
 #define COUNTDOWN_FRAME          PICKER_FRAME
 
@@ -28,6 +31,16 @@
 #define LOCALNOTIFY_NAME_VALUE   @"itIsOK"
 
 @interface TimerViewController ()
+
+@end
+
+@implementation UINavigationBar (customNav)
+
+- (CGSize)sizeThatFits:(CGSize)size
+{
+    CGSize newSize = CGSizeMake(self.frame.size.width, NAV_HEIGHT);
+    return newSize;
+}
 
 @end
 
@@ -46,8 +59,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_timer.png"]];    
-    self.view.clipsToBounds   = NO;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_timer.png"]];
+    
+    // 导航
+    UINavigationBar *navBar = [self.navigationController navigationBar];
+    [navBar setBackgroundImage:[UIImage imageNamed:@"bg_timerNav.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    // 关闭按钮
+    UIButton *btnClose = [[UIButton alloc] initWithFrame:CLOSEBUTTON_FRAME];
+    [btnClose setImage:[UIImage imageNamed:@"btn_close.png"] forState:UIControlStateNormal];
+    [btnClose addTarget:self action:@selector(btnCloseTap) forControlEvents:UIControlEventTouchUpInside];
+    btnClose.contentEdgeInsets = UIEdgeInsetsMake(-10, -6, 0, 0);
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithCustomView:btnClose];
+    self.navigationItem.rightBarButtonItem = btnItem;
+    
     // 数据
     NSMutableArray *hoursArray = [[NSMutableArray alloc] init];
     for (int i=0; i<24; i++)
@@ -82,15 +107,7 @@
     [self.cancelButton addTarget:self action:@selector(btnCancelTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.cancelButton];
     
-    UIButton *btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnClose.frame = COLOSEBUTTON_FRAME;
-    [btnClose setBackgroundImage:[UIImage imageNamed:@"btn_moreclose.png"] forState:UIControlStateNormal];
-    [btnClose addTarget:self action:@selector(btnCloseTap:) forControlEvents:UIControlEventTouchUpInside];
-    //[self.view addSubview:btnClose];
-    
     [self refreshDisplay];
-    //[self dismissViewControllerAnimated:YES completion:nil];
-
 
 }
 
@@ -116,6 +133,11 @@
     }
 }
 
+- (void)btnCloseTap
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)updateCountDown:(id)sender
 {
     UILocalNotification *notif = [self itIsOKNotifications];
@@ -125,12 +147,17 @@
     }
     
     int interval = (int)[notif.fireDate timeIntervalSinceNow];
-    if (interval > 0)
+    if (interval >= 0)
     {
         int nHours = floor(interval/3600);
         int nMins  = (interval%3600)/60;
         int nSecs  = (interval%3600)%60;
         self.countDownLable.text = [NSString stringWithFormat:@"%02d:%02d:%02d",nHours, nMins, nSecs];
+    }
+    if (interval == 0)
+    {
+        self.pickModel = YES;
+        [self refreshDisplay];
     }
 }
 
@@ -207,7 +234,6 @@
 - (BOOL) scheduleNotify
 {
     [self cancelNotify];
-    
     NSString *hoursStr = [self.hoursArray objectAtIndex:[self.pickerView selectedRowInComponent:0]];
     NSString *minsStr  = [self.minsArray objectAtIndex:[self.pickerView selectedRowInComponent:1]];
     int interval = [hoursStr intValue]*3600 + [minsStr intValue]*60;
@@ -222,13 +248,14 @@
     notif.fireDate  = pickerDate;
     notif.timeZone  = [NSTimeZone defaultTimeZone];
     notif.alertBody = @"你的菜该好了，快去看看吧！";
-    notif.soundName = UILocalNotificationDefaultSoundName;
+    notif.soundName = @"alarm.mp3";
+    notif.applicationIconBadgeNumber = 0;
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:LOCALNOTIFY_NAME_VALUE forKey:LOCALNOTIFY_NAME_KEY];
     notif.userInfo = userInfo;
     [[UIApplication sharedApplication] scheduleLocalNotification:notif];
     return YES;
-    
 }
+
 - (BOOL) cancelNotify
 {
     for (UILocalNotification *notification in [[[UIApplication sharedApplication] scheduledLocalNotifications] copy])
@@ -240,13 +267,7 @@
             return YES;
         }
     }
-    return NO;
-}
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    self.view.superview.layer.cornerRadius  = SUPERVIEW_CORNERRADIUS;
-    self.view.superview.layer.masksToBounds = YES;
+    return YES;
 }
 
 #pragma mark -
@@ -277,12 +298,6 @@
 {
 	return PICKER_COMPONENT_WIDTH;
 }
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
-{
-	return PICKER_ROW_HEIGHT;
-}
-
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
