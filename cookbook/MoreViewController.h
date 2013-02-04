@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "GMGridView.h"
 
+// 更多
+#define RECT_MOREMODULVIEW   CGRectMake(0, 0, 572, 372)
+
+
 @interface MoreViewController : UIViewController<GMGridViewDataSource, GMGridViewActionDelegate >
 @property (strong, nonatomic) GMGridView *appGridView;
 @end

@@ -8,15 +8,32 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "ViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
-    [Parse setApplicationId:@"jAyjBkPg6CV09Rl63UBkDW7Q7cZ45UcjtDkv2uZk"
-                  clientKey:@"I07Vt5Y81YHJSl2KQ0KeI5DUpZ7DaJrZZYuVaRCd"];
+    // musice
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];
+    NSData *mp3Data = [NSData dataWithContentsOfFile:path];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:mp3Data error:NULL];
+    self.audioPlayer.volume = 0.5;
+    self.audioPlayer.numberOfLoops = NSIntegerMax;
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
+
+    NSString *pathAlarm = [[NSBundle mainBundle] pathForResource:@"alarm" ofType:@"mp3"];
+    NSData *dataAlarm = [NSData dataWithContentsOfFile:pathAlarm];
+    self.alarm = [[AVAudioPlayer alloc] initWithData:dataAlarm error:NULL];
+    self.alarm.volume = 1;
+    self.alarm.numberOfLoops = 0;
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]  bounds]];
+    self.window.rootViewController = [[ViewController alloc] init];
+    [self.window makeKeyAndVisible];
+
     // 启动画面动画
     self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 1024, 768)];
     self.splashView.image = [UIImage imageNamed:@"Default-Landscape.png"];
@@ -28,27 +45,32 @@
     [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
     self.splashView.alpha = 0.0;
     [UIView commitAnimations];
+
     
-    // musice
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];
-    NSData *mp3Data = [NSData dataWithContentsOfFile:path];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:mp3Data error:NULL];
-    self.audioPlayer.volume = 0.5;
-    self.audioPlayer.numberOfLoops = NSIntegerMax;
-    [self.audioPlayer prepareToPlay];
-    [self.audioPlayer play];
+    [Parse setApplicationId:@"jAyjBkPg6CV09Rl63UBkDW7Q7cZ45UcjtDkv2uZk"
+                  clientKey:@"I07Vt5Y81YHJSl2KQ0KeI5DUpZ7DaJrZZYuVaRCd"];
+    
     return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self.alarm stop];
 }
 
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     if(application.applicationState == UIApplicationStateActive )
     {
-        [[[UIAlertView alloc] initWithTitle:@"提醒"
+        [self.alarm prepareToPlay];
+        [self.alarm play];
+        
+        [[[UIAlertView alloc] initWithTitle:nil
                                     message:[NSString stringWithFormat:@"你的菜该好了，快去看看吧！"]
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
+                                   delegate:self
+                          cancelButtonTitle:@"确定"
                           otherButtonTitles:nil] show];
+        [application setApplicationIconBadgeNumber:0];// 保留
     }
 }
      

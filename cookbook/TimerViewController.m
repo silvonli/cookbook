@@ -70,8 +70,7 @@
     [btnClose setImage:[UIImage imageNamed:@"btn_close.png"] forState:UIControlStateNormal];
     [btnClose addTarget:self action:@selector(btnCloseTap) forControlEvents:UIControlEventTouchUpInside];
     btnClose.contentEdgeInsets = UIEdgeInsetsMake(-10, -6, 0, 0);
-    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithCustomView:btnClose];
-    self.navigationItem.rightBarButtonItem = btnItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btnClose];;
     
     // 数据
     NSMutableArray *hoursArray = [[NSMutableArray alloc] init];
@@ -238,7 +237,7 @@
     NSString *minsStr  = [self.minsArray objectAtIndex:[self.pickerView selectedRowInComponent:1]];
     int interval = [hoursStr intValue]*3600 + [minsStr intValue]*60;
     
-    if (interval<=0)
+    if (interval<0)
     {
         return NO;
     }

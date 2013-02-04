@@ -22,12 +22,12 @@
 #define RECIPEGRID_ITEM_SIZE             CGSizeMake(302, 201)
 
 // 按钮位置
-#define RECT_CATEGORYBG                  CGRectMake(26,168, 267, 432)
-#define RECT_TITLEIMG                    CGRectMake(90,217, 138, 33)
+#define RECT_CATEGORYBG                  CGRectMake(26, 168, 267, 432)
+#define RECT_TITLEIMG                    CGRectMake(90, 217, 138, 33)
 #define RECT_MOREBUTTON                  CGRectMake(155, 14, 154, 174)
-#define RECT_MUSICBUTTON                 CGRectMake(9, 615, 170, 150)
-#define RECT_TIMERBUTTON                 CGRectMake(181,619, 95, 154)
-#define RECT_URLBUTTON                   CGRectMake(69, 505, 188,67)
+#define RECT_MUSICBUTTON                 CGRectMake(9,  615, 170, 150)
+#define RECT_TIMERBUTTON                 CGRectMake(181,619, 95,  154)
+#define RECT_URLBUTTON                   CGRectMake(69, 505, 188, 67)
 
 // 分类按钮位置
 #define CATEGORYBUTTON_SIZE              CGSizeMake(99, 44)
@@ -36,8 +36,6 @@
 #define CATEGORYBUTTON_INIT_Y            284
 #define CATEGORYBUTTON_V_SPACING         13
 
-// 更多
-#define RECT_MOREMODULVIEW               CGRectMake(0, 0, 580, 380)
 
 @interface ViewController ()<GMGridViewDataSource, GMGridViewActionDelegate>
 
@@ -156,10 +154,11 @@
 - (void)buttonTimer:(id)sender
 {
     TimerViewController *tvc = [[TimerViewController alloc] initWithNibName:nil bundle:nil];
-    tvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    tvc.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:tvc animated:YES completion:nil];
-    tvc.view.superview.bounds = RECT_TIMERMODULVIEW;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tvc];
+    nav.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:nav animated:YES completion:nil];
+    nav.view.superview.bounds = RECT_TIMERMODULVIEW;
 }
 
 - (void)buttonOpenURL:(id)sender
@@ -234,6 +233,7 @@
 {
     return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

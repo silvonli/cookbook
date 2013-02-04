@@ -179,10 +179,11 @@
 - (void)buttonTimer:(id)sender
 {
     TimerViewController *tvc = [[TimerViewController alloc] initWithNibName:nil bundle:nil];
-    tvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    tvc.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:tvc animated:YES completion:nil];
-    tvc.view.superview.bounds = RECT_TIMERMODULVIEW;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tvc];
+    nav.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:nav animated:YES completion:nil];
+    nav.view.superview.bounds = RECT_TIMERMODULVIEW;
 }
 
 - (void)didReceiveMemoryWarning
