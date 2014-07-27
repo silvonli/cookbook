@@ -8,7 +8,7 @@
 
 #import "RecipeViewController.h"
 #import "CBDataManager.h"
-#import "OHAttributedLabel/OHAttributedLabel.h"
+#import "OHAttributedLabel.h"
 #import "AppDelegate.h"
 #import "TimerViewController.h"
 
