@@ -11,9 +11,11 @@
 #import "ViewController.h"
 @implementation AppDelegate
 
+@synthesize audioPlayer;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
     
     // musice
     NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"];

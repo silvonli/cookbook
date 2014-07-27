@@ -124,7 +124,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.btnMusic.selected = !appDelegate.audioPlayer.playing;
 }
 
@@ -140,7 +140,7 @@
 
 - (void)buttonMusic:(id)sender
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     if (appDelegate.audioPlayer.playing == NO)
     {
         [appDelegate.audioPlayer play];

@@ -63,7 +63,7 @@
     [btnMusic addTarget:self action:@selector(buttonMusic:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnMusic];
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     btnMusic.selected = !appDelegate.audioPlayer.playing;
     
     // 滚动视
@@ -164,7 +164,7 @@
 }
 - (void)buttonMusic:(id)sender
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     if (appDelegate.audioPlayer.playing == NO)
     {
         [appDelegate.audioPlayer play];
